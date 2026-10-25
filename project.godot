@@ -20,8 +20,8 @@ GameController="*uid://dk4grfkef1lu"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=1440
+window/size/viewport_width=1440
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
