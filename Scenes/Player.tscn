@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://0a28o84wq3ci" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="SpriteFrames" uid="uid://buprbe1wirggr" path="res://Assets/Models/Player/Frames/survivor_feet.tres" id="2_vgqql"]
+[ext_resource type="SpriteFrames" uid="uid://phn1u1rvetrw" path="res://Assets/Models/Player/Frames/survivor_rifle.tres" id="3_5ixxa"]
 [ext_resource type="SpriteFrames" uid="uid://qycypuo60k17" path="res://Assets/Models/Player/Frames/survivor_handgun.tres" id="3_fkybt"]
+[ext_resource type="SpriteFrames" uid="uid://dqkuvrbc2eu5m" path="res://Assets/Models/Player/Frames/survivor_shotgun.tres" id="4_nn08x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 125.0
@@ -10,6 +12,11 @@ radius = 125.0
 [node name="Player" type="CharacterBody2D" unique_id=1573676459]
 motion_mode = 1
 script = ExtResource("1_6t5aa")
+_speed = null
+_hp = null
+_feet_turn_speed = null
+_weapons = Array[SpriteFrames]([ExtResource("3_fkybt"), ExtResource("3_5ixxa"), ExtResource("4_nn08x")])
+_fire_interval = null
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1752817469]
 scale = Vector2(3, 3)
