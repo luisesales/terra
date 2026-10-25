@@ -1,0 +1,720 @@
+{ "frames": [
+   {
+    "filename": "survivor_shotgun 0.aseprite",
+    "frame": { "x": 624, "y": 356, "w": 130, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 130, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 1.aseprite",
+    "frame": { "x": 669, "y": 442, "w": 130, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 130, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 2.aseprite",
+    "frame": { "x": 803, "y": 442, "w": 130, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 130, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 3.aseprite",
+    "frame": { "x": 267, "y": 578, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 4.aseprite",
+    "frame": { "x": 400, "y": 579, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 5.aseprite",
+    "frame": { "x": 533, "y": 599, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 6.aseprite",
+    "frame": { "x": 666, "y": 683, "w": 128, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 128, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 7.aseprite",
+    "frame": { "x": 798, "y": 683, "w": 128, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 128, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 8.aseprite",
+    "frame": { "x": 3, "y": 369, "w": 129, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 129, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 9.aseprite",
+    "frame": { "x": 3, "y": 450, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 10.aseprite",
+    "frame": { "x": 404, "y": 498, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 11.aseprite",
+    "frame": { "x": 3, "y": 450, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 12.aseprite",
+    "frame": { "x": 3, "y": 369, "w": 129, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 129, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 13.aseprite",
+    "frame": { "x": 798, "y": 683, "w": 128, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 128, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 14.aseprite",
+    "frame": { "x": 666, "y": 683, "w": 128, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 128, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 15.aseprite",
+    "frame": { "x": 533, "y": 599, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 16.aseprite",
+    "frame": { "x": 400, "y": 579, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 17.aseprite",
+    "frame": { "x": 267, "y": 578, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 18.aseprite",
+    "frame": { "x": 803, "y": 442, "w": 130, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 130, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 19.aseprite",
+    "frame": { "x": 669, "y": 442, "w": 130, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 130, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 20.aseprite",
+    "frame": { "x": 666, "y": 603, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 79, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 21.aseprite",
+    "frame": { "x": 799, "y": 603, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 79, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 22.aseprite",
+    "frame": { "x": 3, "y": 609, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 23.aseprite",
+    "frame": { "x": 136, "y": 658, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 24.aseprite",
+    "frame": { "x": 270, "y": 413, "w": 129, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 58, "w": 129, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 25.aseprite",
+    "frame": { "x": 536, "y": 518, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 26.aseprite",
+    "frame": { "x": 403, "y": 417, "w": 129, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 129, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 27.aseprite",
+    "frame": { "x": 668, "y": 522, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 28.aseprite",
+    "frame": { "x": 800, "y": 522, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 29.aseprite",
+    "frame": { "x": 135, "y": 528, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 30.aseprite",
+    "frame": { "x": 535, "y": 679, "w": 127, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 127, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 31.aseprite",
+    "frame": { "x": 135, "y": 528, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 32.aseprite",
+    "frame": { "x": 800, "y": 522, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 33.aseprite",
+    "frame": { "x": 668, "y": 522, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 34.aseprite",
+    "frame": { "x": 403, "y": 417, "w": 129, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 129, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 35.aseprite",
+    "frame": { "x": 536, "y": 518, "w": 128, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 58, "w": 128, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 36.aseprite",
+    "frame": { "x": 270, "y": 413, "w": 129, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 58, "w": 129, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 37.aseprite",
+    "frame": { "x": 136, "y": 658, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 38.aseprite",
+    "frame": { "x": 3, "y": 609, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 39.aseprite",
+    "frame": { "x": 799, "y": 603, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 79, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 40.aseprite",
+    "frame": { "x": 136, "y": 448, "w": 130, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 130, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 41.aseprite",
+    "frame": { "x": 3, "y": 689, "w": 127, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 59, "w": 127, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 42.aseprite",
+    "frame": { "x": 134, "y": 738, "w": 127, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 127, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 43.aseprite",
+    "frame": { "x": 269, "y": 659, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 79, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 44.aseprite",
+    "frame": { "x": 758, "y": 361, "w": 130, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 130, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 45.aseprite",
+    "frame": { "x": 3, "y": 205, "w": 132, "h": 78 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 59, "w": 132, "h": 78 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 46.aseprite",
+    "frame": { "x": 591, "y": 171, "w": 133, "h": 79 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 59, "w": 133, "h": 79 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 47.aseprite",
+    "frame": { "x": 714, "y": 87, "w": 133, "h": 80 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 59, "w": 133, "h": 80 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 48.aseprite",
+    "frame": { "x": 851, "y": 107, "w": 134, "h": 79 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 75, "y": 60, "w": 134, "h": 79 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 49.aseprite",
+    "frame": { "x": 336, "y": 116, "w": 134, "h": 79 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 75, "y": 60, "w": 134, "h": 79 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 50.aseprite",
+    "frame": { "x": 714, "y": 3, "w": 134, "h": 80 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 75, "y": 59, "w": 134, "h": 80 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 51.aseprite",
+    "frame": { "x": 3, "y": 121, "w": 132, "h": 80 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 59, "w": 132, "h": 80 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 52.aseprite",
+    "frame": { "x": 728, "y": 190, "w": 132, "h": 79 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 59, "w": 132, "h": 79 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 53.aseprite",
+    "frame": { "x": 864, "y": 190, "w": 132, "h": 79 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 59, "w": 132, "h": 79 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 54.aseprite",
+    "frame": { "x": 271, "y": 199, "w": 131, "h": 79 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 76, "y": 59, "w": 131, "h": 79 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 55.aseprite",
+    "frame": { "x": 539, "y": 254, "w": 129, "h": 79 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 59, "w": 129, "h": 79 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 56.aseprite",
+    "frame": { "x": 406, "y": 199, "w": 129, "h": 80 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 129, "h": 80 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 57.aseprite",
+    "frame": { "x": 672, "y": 273, "w": 129, "h": 79 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 59, "w": 129, "h": 79 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 58.aseprite",
+    "frame": { "x": 355, "y": 283, "w": 128, "h": 79 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 128, "h": 79 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 59.aseprite",
+    "frame": { "x": 3, "y": 287, "w": 129, "h": 78 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 78 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 60.aseprite",
+    "frame": { "x": 536, "y": 437, "w": 129, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 129, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 61.aseprite",
+    "frame": { "x": 136, "y": 367, "w": 130, "h": 77 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 130, "h": 77 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 62.aseprite",
+    "frame": { "x": 270, "y": 498, "w": 130, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 59, "w": 130, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 63.aseprite",
+    "frame": { "x": 402, "y": 679, "w": 129, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 79, "y": 59, "w": 129, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 64.aseprite",
+    "frame": { "x": 139, "y": 284, "w": 128, "h": 79 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 58, "w": 128, "h": 79 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 65.aseprite",
+    "frame": { "x": 805, "y": 273, "w": 121, "h": 84 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 75, "y": 58, "w": 121, "h": 84 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 66.aseprite",
+    "frame": { "x": 474, "y": 88, "w": 113, "h": 94 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 70, "y": 58, "w": 113, "h": 94 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 67.aseprite",
+    "frame": { "x": 852, "y": 3, "w": 107, "h": 100 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 63, "y": 58, "w": 107, "h": 100 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 68.aseprite",
+    "frame": { "x": 227, "y": 94, "w": 105, "h": 101 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 58, "y": 59, "w": 105, "h": 101 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 69.aseprite",
+    "frame": { "x": 364, "y": 3, "w": 106, "h": 109 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 69, "y": 58, "w": 106, "h": 109 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 70.aseprite",
+    "frame": { "x": 227, "y": 3, "w": 133, "h": 87 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 61, "w": 133, "h": 87 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 71.aseprite",
+    "frame": { "x": 474, "y": 3, "w": 142, "h": 81 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 63, "w": 142, "h": 81 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 72.aseprite",
+    "frame": { "x": 3, "y": 3, "w": 110, "h": 114 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 81, "y": 26, "w": 110, "h": 114 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 73.aseprite",
+    "frame": { "x": 271, "y": 282, "w": 80, "h": 127 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 83, "y": 10, "w": 80, "h": 127 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 74.aseprite",
+    "frame": { "x": 620, "y": 3, "w": 90, "h": 124 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 81, "y": 16, "w": 90, "h": 124 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 75.aseprite",
+    "frame": { "x": 117, "y": 3, "w": 106, "h": 112 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 79, "y": 29, "w": 106, "h": 112 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 76.aseprite",
+    "frame": { "x": 139, "y": 199, "w": 128, "h": 81 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 77, "y": 60, "w": 128, "h": 81 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   },
+   {
+    "filename": "survivor_shotgun 77.aseprite",
+    "frame": { "x": 487, "y": 337, "w": 133, "h": 76 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 78, "y": 61, "w": 133, "h": 76 },
+    "sourceSize": { "w": 230, "h": 206 },
+    "duration": 33
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.18.6-x64",
+  "image": "survivor_shotgun.png",
+  "format": "RGBA8888",
+  "size": { "w": 999, "h": 817 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 19, "direction": "forward", "color": "#000000ff" },
+   { "name": "move", "from": 20, "to": 39, "direction": "forward", "color": "#000000ff" },
+   { "name": "shoot", "from": 40, "to": 42, "direction": "forward", "color": "#000000ff" },
+   { "name": "reload", "from": 43, "to": 62, "direction": "forward", "color": "#000000ff" },
+   { "name": "meleeattack", "from": 63, "to": 77, "direction": "forward", "color": "#000000ff" }
+  ]
+ }
+}
