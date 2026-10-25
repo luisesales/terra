@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dudk37uvcb2l"]
+
+[ext_resource type="Script" uid="uid://drhpvhgmgfyma" path="res://Scripts/weapon_data.gd" id="1_0j2uf"]
+[ext_resource type="SpriteFrames" uid="uid://phn1u1rvetrw" path="res://Assets/Models/Player/Frames/survivor_rifle.tres" id="2_3anr5"]
+
+[resource]
+script = ExtResource("1_0j2uf")
+display_name = "Rifle"
+sprite_frames = ExtResource("2_3anr5")
+damage = 4
+fire_interval = 0.11
+magazine_size = 45
+current_ammo = 45
+reload_time = 3.0
+pierce = 1
+is_automatic = true
+metadata/_custom_type_script = "uid://drhpvhgmgfyma"

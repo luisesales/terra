@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c7d4q0drppmgt"]
 
-[ext_resource type="Script" uid="uid://drhpvhgmgfyma" path="res://Scripts/weapon_data.gd" id="1_d8uxl"]
+[ext_resource type="Script" uid="uid://drhpvhgmgfyma" path="res://Scripts/weapon_data.gd" id="1_l52a6"]
+[ext_resource type="SpriteFrames" uid="uid://qycypuo60k17" path="res://Assets/Models/Player/Frames/survivor_handgun.tres" id="2_rh60p"]
 
 [resource]
-script = ExtResource("1_d8uxl")
+script = ExtResource("1_l52a6")
+sprite_frames = ExtResource("2_rh60p")
+current_ammo = 12
 metadata/_custom_type_script = "uid://drhpvhgmgfyma"
