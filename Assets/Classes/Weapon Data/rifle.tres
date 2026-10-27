@@ -14,5 +14,5 @@ current_ammo = 45
 reload_time = 3.0
 pierce = 1
 is_automatic = true
-muzzle_offset = Vector2(91, 14)
+muzzle_offset = Vector2(86, 14)
 metadata/_custom_type_script = "uid://drhpvhgmgfyma"

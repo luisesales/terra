@@ -13,3 +13,4 @@ extends Resource
 @export var is_automatic := false
 @export var is_melee := false
 @export var muzzle_offset := Vector2.ZERO
+@export var spread_degrees := 0.0

@@ -18,8 +18,17 @@ var _is_reloading := false
 
 var _fire_cooldown := 0.0
 
+const BULLET_SCENE := preload("res://Scenes/bullet.tscn")
+
+func _spawn_bullet(spread := 0.0) -> void:
+	var bullet := BULLET_SCENE.instantiate() as Bullet
+	get_parent().add_child(bullet)
+	var direction := Vector2.RIGHT.rotated(_body.global_rotation + spread)
+	bullet.launch(_muzzle.global_position, direction, _weapon)
+
+
 func _show_muzzle_flash() -> void:
-	_muzzle_flash.rotation = randf_range(-0.02, 0.02)
+	_muzzle_flash.rotation = randf_range(-0.02, 0.02,)
 	_muzzle_flash.visible = true
 	await get_tree().create_timer(0.05).timeout
 	_muzzle_flash.visible = false
@@ -33,7 +42,7 @@ func _equip(index: int) -> void:
 	_body.play(&"idle")
 
 func _fire_weapon():
-	if _fire_cooldown > 0.0:
+	if _fire_cooldown > 0.0 || _is_reloading:
 		return
 	if not _weapon.is_melee :
 		if _weapon.current_ammo <= 0 :
@@ -42,11 +51,14 @@ func _fire_weapon():
 		_weapon.current_ammo -= 1
 		_show_muzzle_flash()
 		_body.play(&"shoot")
+		for i in _weapon.pellets:
+			var t := 0.5 if _weapon.pellets == 1 else float(i) / (_weapon.pellets - 1)
+			var angle := lerpf(-_weapon.spread_degrees, _weapon.spread_degrees, t)
+			_spawn_bullet(deg_to_rad(angle + randf_range(-1.5, 1.5)))
+
 	else:
-		_body.play(&"meleeattack")
-		
-	_fire_cooldown = _weapon.fire_interval
-		
+		_body.play(&"meleeattack")	
+	_fire_cooldown = _weapon.fire_interval		
 
 func _handle_aim() -> void:
 	_body.look_at(get_global_mouse_position())
