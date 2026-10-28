@@ -3,6 +3,6 @@
 /android/
 /Tools/
 /Aseprite/
-.zip/
-.psd/
-.ai/
+*.zip
+*.psd
+*.ai
