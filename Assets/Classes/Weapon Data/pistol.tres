@@ -7,5 +7,6 @@
 script = ExtResource("1_l52a6")
 sprite_frames = ExtResource("2_rh60p")
 current_ammo = 12
-muzzle_offset = Vector2(62, 19)
+muzzle_offset = Vector2(124, 38)
+spread_degrees = 0.0
 metadata/_custom_type_script = "uid://drhpvhgmgfyma"

@@ -14,6 +14,6 @@ current_ammo = 8
 reload_time = 4.0
 pellets = 12
 pierce = 1
-muzzle_offset = Vector2(86, 14)
+muzzle_offset = Vector2(180, 28)
 spread_degrees = 10.0
 metadata/_custom_type_script = "uid://drhpvhgmgfyma"
