@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dudk37uvcb2l" path="res://Assets/Classes/Weapon Data/rifle.tres" id="4_megsn"]
 [ext_resource type="Resource" uid="uid://bsns8k1pq38xq" path="res://Assets/Classes/Weapon Data/shotgun.tres" id="5_yoq75"]
 [ext_resource type="Resource" uid="uid://dyhurecrcntnh" path="res://Assets/Classes/Weapon Data/knife.tres" id="6_8erm5"]
+[ext_resource type="Texture2D" uid="uid://ddi22crcct56g" path="res://Assets/Models/Player/Survivor Spine/images/muzzle_flash-export.png" id="9_megsn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 125.0
@@ -31,6 +32,15 @@ texture_filter = 2
 sprite_frames = ExtResource("3_fkybt")
 animation = &"shoot"
 autoplay = "idle"
+
+[node name="Muzzle" type="Marker2D" parent="Pivot/Body" unique_id=1524769448]
+
+[node name="MuzzleFlash" type="Sprite2D" parent="Pivot/Body/Muzzle" unique_id=1601731154]
+visible = false
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("9_megsn")
+centered = false
+offset = Vector2(-22, -123.5)
 
 [node name="Label" type="Label" parent="." unique_id=1884657487]
 offset_left = 16.0
