@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dcvyn2vc5474q"]
+
+[ext_resource type="Script" uid="uid://0a28o84wq3ci" path="res://Scripts/player.gd" id="1_6t5aa"]
+[ext_resource type="Script" uid="uid://drhpvhgmgfyma" path="res://Scripts/weapon_data.gd" id="2_52ee3"]
+[ext_resource type="SpriteFrames" uid="uid://buprbe1wirggr" path="res://Assets/Models/Player/Frames/survivor_feet.tres" id="2_vgqql"]
+[ext_resource type="Resource" uid="uid://c7d4q0drppmgt" path="res://Assets/Classes/Weapon Data/pistol.tres" id="3_bhhdu"]
+[ext_resource type="SpriteFrames" uid="uid://qycypuo60k17" path="res://Assets/Models/Player/Frames/survivor_handgun.tres" id="3_fkybt"]
+[ext_resource type="Resource" uid="uid://dudk37uvcb2l" path="res://Assets/Classes/Weapon Data/rifle.tres" id="4_megsn"]
+[ext_resource type="Resource" uid="uid://bsns8k1pq38xq" path="res://Assets/Classes/Weapon Data/shotgun.tres" id="5_yoq75"]
+[ext_resource type="Resource" uid="uid://dyhurecrcntnh" path="res://Assets/Classes/Weapon Data/knife.tres" id="6_8erm5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 125.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1573676459]
+motion_mode = 1
+script = ExtResource("1_6t5aa")
+_weapons = Array[ExtResource("2_52ee3")]([ExtResource("3_bhhdu"), ExtResource("4_megsn"), ExtResource("5_yoq75"), ExtResource("6_8erm5")])
+
+[node name="Pivot" type="Node2D" parent="." unique_id=1752817469]
+scale = Vector2(3, 3)
+
+[node name="Feet" type="AnimatedSprite2D" parent="Pivot" unique_id=191231669]
+texture_filter = 2
+sprite_frames = ExtResource("2_vgqql")
+animation = &"strafe_left"
+autoplay = "idle"
+
+[node name="Body" type="AnimatedSprite2D" parent="Pivot" unique_id=1103648563]
+texture_filter = 2
+sprite_frames = ExtResource("3_fkybt")
+animation = &"shoot"
+autoplay = "idle"
+
+[node name="Label" type="Label" parent="." unique_id=1884657487]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1332380553]
+position = Vector2(17.5, 0)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1651340084]
+
+[connection signal="animation_finished" from="Pivot/Body" to="." method="_on_body_animation_finished"]

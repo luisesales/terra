@@ -23,3 +23,14 @@ mono_crash.*.json
 *.exe
 # Uncomment if your project does not version PCK files as runtime dependencies.
 # *.pck
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# User-specific ignores
+*.swp
+/Tools/
+/Aseprite/
+*.zip
+*.psd
+*.ai

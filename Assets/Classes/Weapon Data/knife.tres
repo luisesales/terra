@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dyhurecrcntnh"]
+
+[ext_resource type="Script" uid="uid://drhpvhgmgfyma" path="res://Scripts/weapon_data.gd" id="1_3i1bx"]
+[ext_resource type="SpriteFrames" uid="uid://dthbev0qpeoe7" path="res://Assets/Models/Player/Frames/survivor_knife.tres" id="2_3w3ps"]
+
+[resource]
+script = ExtResource("1_3i1bx")
+sprite_frames = ExtResource("2_3w3ps")
+fire_interval = 0.5
+magazine_size = 99999999
+current_ammo = 99999999
+reload_time = 0.0
+pellets = 0
+is_melee = true
+metadata/_custom_type_script = "uid://drhpvhgmgfyma"
