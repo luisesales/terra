@@ -1,0 +1,2535 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/world_map.gd" id="1_scri"]
+[ext_resource type="TileSet" path="res://Assets/Tiles/TileSets/office_world.tres" id="2_tile"]
+[ext_resource type="Texture2D" uid="uid://ctwo3462vdabn" path="res://Assets/Tiles/Zombies TDS/Buildings Funiture Tile Set/Tilelists/Tilelist3.png" id="3_text"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0"]
+size = Vector2(267.84, 126.9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 22.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2"]
+radius = 22.8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3"]
+size = Vector2(269.64, 150.4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4"]
+radius = 37.18
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5"]
+size = Vector2(174.72, 135.9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6"]
+radius = 41.58
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7"]
+size = Vector2(205.44, 85)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8"]
+radius = 40.04
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_9"]
+size = Vector2(362.6, 83.64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10"]
+size = Vector2(206.4, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11"]
+size = Vector2(102.12, 101.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12"]
+size = Vector2(101.2, 101.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13"]
+size = Vector2(4608, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14"]
+size = Vector2(44, 3072)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15"]
+size = Vector2(42, 384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16"]
+size = Vector2(42, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17"]
+size = Vector2(512, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18"]
+size = Vector2(640, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_19"]
+size = Vector2(384, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20"]
+size = Vector2(42, 640)
+
+[node name="WorldOffice" type="Node2D"]
+script = ExtResource("1_scri")
+scale = Vector2(1.5, 1.5)
+texture_filter = 2
+display_name = "Escritório"
+playable_rect = Rect2(40, 40, 4528, 2992)
+camera_rect = Rect2(0, 0, 4608, 3072)
+player_start = Vector2(2240, 1587.2)
+camera_zoom = 0.75
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQADAAAAAAABAAAAAQADAAAAAAACAAAAAQADAAAAAAADAAAAAQADAAAAAAAEAAAAAQADAAAAAAAFAAAAAQADAAAAAAAGAAAAAQADAAAAAAAHAAAAAQADAAAAAAAIAAAAAQADAAAAAAAJAAAAAQADAAAAAAAKAAAAAQADAAAAAAALAAAAAQADAAAAAAAMAAAAAQADAAAAAAANAAAAAQADAAAAAAAOAAAAAQADAAAAAAAPAAAAAQADAAAAAAAQAAAAAQADAAAAAAARAAAAAQADAAAAAAASAAAAAQADAAAAAAATAAAAAQADAAAAAAAUAAAAAQADAAAAAAAVAAAAAQADAAAAAAAWAAAAAQADAAAAAAAXAAAAAQADAAAAAAAYAAAAAQADAAAAAAAZAAAAAQADAAAAAAAaAAAAAQADAAAAAAAbAAAAAQADAAAAAAAcAAAAAQADAAAAAAAdAAAAAQADAAAAAAAeAAAAAQADAAAAAAAfAAAAAQADAAAAAAAgAAAAAQADAAAAAAAhAAAAAQADAAAAAAAiAAAAAQADAAAAAAAjAAAAAQADAAAAAAAAAAEAAQADAAAAAAABAAEAAQADAAAAAAACAAEAAQADAAAAAAADAAEAAQADAAAAAAAEAAEAAQADAAAAAAAFAAEAAQADAAAAAAAGAAEAAQADAAAAAAAHAAEAAQADAAAAAAAIAAEAAQADAAAAAAAJAAEAAQADAAAAAAAKAAEAAQADAAAAAAALAAEAAQADAAAAAAAMAAEAAQADAAAAAAANAAEAAQADAAAAAAAOAAEAAQADAAAAAAAPAAEAAQADAAAAAAAQAAEAAQADAAAAAAARAAEAAQADAAAAAAASAAEAAQADAAAAAAATAAEAAQADAAAAAAAUAAEAAQADAAAAAAAVAAEAAQADAAAAAAAWAAEAAQADAAAAAAAXAAEAAQADAAAAAAAYAAEAAQADAAAAAAAZAAEAAQADAAAAAAAaAAEAAQADAAAAAAAbAAEAAQADAAAAAAAcAAEAAQADAAAAAAAdAAEAAQADAAAAAAAeAAEAAQADAAAAAAAfAAEAAQADAAAAAAAgAAEAAQADAAAAAAAhAAEAAQADAAAAAAAiAAEAAQADAAAAAAAjAAEAAQADAAAAAAAAAAIAAQADAAAAAAABAAIAAQADAAAAAAACAAIAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAJAAIAAQAAAAAAAAAKAAIAAQAAAAAAAAALAAIAAQAAAAAAAAAMAAIAAQADAAAAAAANAAIAAQADAAAAAAAOAAIAAQADAAAAAAAPAAIAAQADAAAAAAAQAAIAAQADAAAAAAARAAIAAQADAAAAAAASAAIAAQADAAAAAAATAAIAAQADAAAAAAAUAAIAAQADAAAAAAAVAAIAAQADAAAAAAAWAAIAAQADAAAAAAAXAAIAAQADAAAAAAAYAAIAAQADAAAAAAAZAAIAAQAEAAAAAAAaAAIAAQAEAAAAAAAbAAIAAQAEAAAAAAAcAAIAAQAEAAAAAAAdAAIAAQAEAAAAAAAeAAIAAQAEAAAAAAAfAAIAAQAEAAAAAAAgAAIAAQAEAAAAAAAhAAIAAQAEAAAAAAAiAAIAAQADAAAAAAAjAAIAAQADAAAAAAAAAAMAAQADAAAAAAABAAMAAQADAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAMAAQAAAAAAAAAMAAMAAQADAAAAAAANAAMAAQADAAAAAAAOAAMAAQADAAAAAAAPAAMAAQADAAAAAAAQAAMAAQADAAAAAAARAAMAAQADAAAAAAASAAMAAQADAAAAAAATAAMAAQADAAAAAAAUAAMAAQADAAAAAAAVAAMAAQADAAAAAAAWAAMAAQADAAAAAAAXAAMAAQADAAAAAAAYAAMAAQADAAAAAAAZAAMAAQAEAAAAAAAaAAMAAQAEAAAAAAAbAAMAAQAEAAAAAAAcAAMAAQAEAAAAAAAdAAMAAQAEAAAAAAAeAAMAAQAEAAAAAAAfAAMAAQAEAAAAAAAgAAMAAQAEAAAAAAAhAAMAAQAEAAAAAAAiAAMAAQADAAAAAAAjAAMAAQADAAAAAAAAAAQAAQADAAAAAAABAAQAAQADAAAAAAACAAQAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAGAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAMAAQAAQADAAAAAAANAAQAAQADAAAAAAAOAAQAAQADAAAAAAAPAAQAAQADAAAAAAAQAAQAAQADAAAAAAARAAQAAQADAAAAAAASAAQAAQADAAAAAAATAAQAAQADAAAAAAAUAAQAAQADAAAAAAAVAAQAAQADAAAAAAAWAAQAAQADAAAAAAAXAAQAAQADAAAAAAAYAAQAAQADAAAAAAAZAAQAAQAEAAAAAAAaAAQAAQAEAAAAAAAbAAQAAQAEAAAAAAAcAAQAAQAEAAAAAAAdAAQAAQAEAAAAAAAeAAQAAQAEAAAAAAAfAAQAAQAEAAAAAAAgAAQAAQAEAAAAAAAhAAQAAQAEAAAAAAAiAAQAAQADAAAAAAAjAAQAAQADAAAAAAAAAAUAAQADAAAAAAABAAUAAQADAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAAAAAAMAAUAAQADAAAAAAANAAUAAQADAAAAAAAOAAUAAQADAAAAAAAPAAUAAQADAAAAAAAQAAUAAQADAAAAAAARAAUAAQADAAAAAAASAAUAAQADAAAAAAATAAUAAQADAAAAAAAUAAUAAQADAAAAAAAVAAUAAQADAAAAAAAWAAUAAQADAAAAAAAXAAUAAQADAAAAAAAYAAUAAQADAAAAAAAZAAUAAQAEAAAAAAAaAAUAAQAEAAAAAAAbAAUAAQAEAAAAAAAcAAUAAQAEAAAAAAAdAAUAAQAEAAAAAAAeAAUAAQAEAAAAAAAfAAUAAQAEAAAAAAAgAAUAAQAEAAAAAAAhAAUAAQAEAAAAAAAiAAUAAQADAAAAAAAjAAUAAQADAAAAAAAAAAYAAQADAAAAAAABAAYAAQADAAAAAAACAAYAAQAAAAAAAAADAAYAAQAAAAAAAAAEAAYAAQAAAAAAAAAFAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAAIAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAALAAYAAQAAAAAAAAAMAAYAAQADAAAAAAANAAYAAQADAAAAAAAOAAYAAQADAAAAAAAPAAYAAQADAAAAAAAQAAYAAQADAAAAAAARAAYAAQADAAAAAAASAAYAAQADAAAAAAATAAYAAQADAAAAAAAUAAYAAQADAAAAAAAVAAYAAQADAAAAAAAWAAYAAQADAAAAAAAXAAYAAQADAAAAAAAYAAYAAQADAAAAAAAZAAYAAQAEAAAAAAAaAAYAAQAEAAAAAAAbAAYAAQAEAAAAAAAcAAYAAQAEAAAAAAAdAAYAAQAEAAAAAAAeAAYAAQAEAAAAAAAfAAYAAQAEAAAAAAAgAAYAAQAEAAAAAAAhAAYAAQAEAAAAAAAiAAYAAQADAAAAAAAjAAYAAQADAAAAAAAAAAcAAQADAAAAAAABAAcAAQADAAAAAAACAAcAAQAAAAAAAAADAAcAAQAAAAAAAAAEAAcAAQAAAAAAAAAFAAcAAQAAAAAAAAAGAAcAAQAAAAAAAAAHAAcAAQAAAAAAAAAIAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAMAAcAAQADAAAAAAANAAcAAQADAAAAAAAOAAcAAQADAAAAAAAPAAcAAQADAAAAAAAQAAcAAQADAAAAAAARAAcAAQADAAAAAAASAAcAAQADAAAAAAATAAcAAQADAAAAAAAUAAcAAQADAAAAAAAVAAcAAQADAAAAAAAWAAcAAQADAAAAAAAXAAcAAQADAAAAAAAYAAcAAQADAAAAAAAZAAcAAQAEAAAAAAAaAAcAAQAEAAAAAAAbAAcAAQAEAAAAAAAcAAcAAQAEAAAAAAAdAAcAAQAEAAAAAAAeAAcAAQAEAAAAAAAfAAcAAQAEAAAAAAAgAAcAAQAEAAAAAAAhAAcAAQAEAAAAAAAiAAcAAQADAAAAAAAjAAcAAQADAAAAAAAAAAgAAQADAAAAAAABAAgAAQADAAAAAAACAAgAAQAAAAAAAAADAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAMAAgAAQADAAAAAAANAAgAAQADAAAAAAAOAAgAAQADAAAAAAAPAAgAAQADAAAAAAAQAAgAAQADAAAAAAARAAgAAQADAAAAAAASAAgAAQADAAAAAAATAAgAAQADAAAAAAAUAAgAAQADAAAAAAAVAAgAAQADAAAAAAAWAAgAAQADAAAAAAAXAAgAAQADAAAAAAAYAAgAAQADAAAAAAAZAAgAAQAEAAAAAAAaAAgAAQAEAAAAAAAbAAgAAQAEAAAAAAAcAAgAAQAEAAAAAAAdAAgAAQAEAAAAAAAeAAgAAQAEAAAAAAAfAAgAAQAEAAAAAAAgAAgAAQAEAAAAAAAhAAgAAQAEAAAAAAAiAAgAAQADAAAAAAAjAAgAAQADAAAAAAAAAAkAAQADAAAAAAABAAkAAQADAAAAAAACAAkAAQADAAAAAAADAAkAAQADAAAAAAAEAAkAAQADAAAAAAAFAAkAAQADAAAAAAAGAAkAAQADAAAAAAAHAAkAAQADAAAAAAAIAAkAAQADAAAAAAAJAAkAAQADAAAAAAAKAAkAAQADAAAAAAALAAkAAQADAAAAAAAMAAkAAQADAAAAAAANAAkAAQADAAAAAAAOAAkAAQADAAAAAAAPAAkAAQADAAAAAAAQAAkAAQADAAAAAAARAAkAAQADAAAAAAASAAkAAQADAAAAAAATAAkAAQADAAAAAAAUAAkAAQADAAAAAAAVAAkAAQADAAAAAAAWAAkAAQADAAAAAAAXAAkAAQADAAAAAAAYAAkAAQADAAAAAAAZAAkAAQADAAAAAAAaAAkAAQADAAAAAAAbAAkAAQADAAAAAAAcAAkAAQADAAAAAAAdAAkAAQADAAAAAAAeAAkAAQADAAAAAAAfAAkAAQADAAAAAAAgAAkAAQADAAAAAAAhAAkAAQADAAAAAAAiAAkAAQADAAAAAAAjAAkAAQADAAAAAAAAAAoAAQADAAAAAAABAAoAAQADAAAAAAACAAoAAQADAAAAAAADAAoAAQADAAAAAAAEAAoAAQADAAAAAAAFAAoAAQADAAAAAAAGAAoAAQADAAAAAAAHAAoAAQADAAAAAAAIAAoAAQADAAAAAAAJAAoAAQADAAAAAAAKAAoAAQADAAAAAAALAAoAAQADAAAAAAAMAAoAAQADAAAAAAANAAoAAQADAAAAAAAOAAoAAQADAAAAAAAPAAoAAQADAAAAAAAQAAoAAQADAAAAAAARAAoAAQADAAAAAAASAAoAAQADAAAAAAATAAoAAQADAAAAAAAUAAoAAQADAAAAAAAVAAoAAQADAAAAAAAWAAoAAQADAAAAAAAXAAoAAQADAAAAAAAYAAoAAQADAAAAAAAZAAoAAQADAAAAAAAaAAoAAQADAAAAAAAbAAoAAQADAAAAAAAcAAoAAQADAAAAAAAdAAoAAQADAAAAAAAeAAoAAQADAAAAAAAfAAoAAQADAAAAAAAgAAoAAQADAAAAAAAhAAoAAQADAAAAAAAiAAoAAQADAAAAAAAjAAoAAQADAAAAAAAAAAsAAQADAAAAAAABAAsAAQADAAAAAAACAAsAAQADAAAAAAADAAsAAQADAAAAAAAEAAsAAQADAAAAAAAFAAsAAQADAAAAAAAGAAsAAQADAAAAAAAHAAsAAQADAAAAAAAIAAsAAQADAAAAAAAJAAsAAQADAAAAAAAKAAsAAQADAAAAAAALAAsAAQADAAAAAAAMAAsAAQADAAAAAAANAAsAAQADAAAAAAAOAAsAAQADAAAAAAAPAAsAAQADAAAAAAAQAAsAAQADAAAAAAARAAsAAQADAAAAAAASAAsAAQADAAAAAAATAAsAAQADAAAAAAAUAAsAAQADAAAAAAAVAAsAAQADAAAAAAAWAAsAAQADAAAAAAAXAAsAAQADAAAAAAAYAAsAAQADAAAAAAAZAAsAAQADAAAAAAAaAAsAAQADAAAAAAAbAAsAAQADAAAAAAAcAAsAAQADAAAAAAAdAAsAAQADAAAAAAAeAAsAAQADAAAAAAAfAAsAAQADAAAAAAAgAAsAAQADAAAAAAAhAAsAAQADAAAAAAAiAAsAAQADAAAAAAAjAAsAAQADAAAAAAAAAAwAAQADAAAAAAABAAwAAQADAAAAAAACAAwAAQADAAAAAAADAAwAAQADAAAAAAAEAAwAAQADAAAAAAAFAAwAAQADAAAAAAAGAAwAAQADAAAAAAAHAAwAAQADAAAAAAAIAAwAAQADAAAAAAAJAAwAAQADAAAAAAAKAAwAAQADAAAAAAALAAwAAQADAAAAAAAMAAwAAQADAAAAAAANAAwAAQADAAAAAAAOAAwAAQADAAAAAAAPAAwAAQADAAAAAAAQAAwAAQADAAAAAAARAAwAAQADAAAAAAASAAwAAQADAAAAAAATAAwAAQADAAAAAAAUAAwAAQADAAAAAAAVAAwAAQADAAAAAAAWAAwAAQADAAAAAAAXAAwAAQADAAAAAAAYAAwAAQADAAAAAAAZAAwAAQADAAAAAAAaAAwAAQADAAAAAAAbAAwAAQADAAAAAAAcAAwAAQADAAAAAAAdAAwAAQADAAAAAAAeAAwAAQADAAAAAAAfAAwAAQADAAAAAAAgAAwAAQADAAAAAAAhAAwAAQADAAAAAAAiAAwAAQADAAAAAAAjAAwAAQADAAAAAAAAAA0AAQADAAAAAAABAA0AAQADAAAAAAACAA0AAQADAAAAAAADAA0AAQADAAAAAAAEAA0AAQADAAAAAAAFAA0AAQADAAAAAAAGAA0AAQADAAAAAAAHAA0AAQADAAAAAAAIAA0AAQADAAAAAAAJAA0AAQADAAAAAAAKAA0AAQADAAAAAAALAA0AAQADAAAAAAAMAA0AAQADAAAAAAANAA0AAQADAAAAAAAOAA0AAQADAAAAAAAPAA0AAQADAAAAAAAQAA0AAQADAAAAAAARAA0AAQADAAAAAAASAA0AAQADAAAAAAATAA0AAQADAAAAAAAUAA0AAQADAAAAAAAVAA0AAQADAAAAAAAWAA0AAQADAAAAAAAXAA0AAQADAAAAAAAYAA0AAQADAAAAAAAZAA0AAQACAAAAAAAaAA0AAQACAAAAAAAbAA0AAQACAAAAAAAcAA0AAQACAAAAAAAdAA0AAQACAAAAAAAeAA0AAQACAAAAAAAfAA0AAQACAAAAAAAgAA0AAQACAAAAAAAhAA0AAQACAAAAAAAiAA0AAQADAAAAAAAjAA0AAQADAAAAAAAAAA4AAQADAAAAAAABAA4AAQADAAAAAAACAA4AAQADAAAAAAADAA4AAQADAAAAAAAEAA4AAQADAAAAAAAFAA4AAQADAAAAAAAGAA4AAQADAAAAAAAHAA4AAQADAAAAAAAIAA4AAQADAAAAAAAJAA4AAQADAAAAAAAKAA4AAQADAAAAAAALAA4AAQADAAAAAAAMAA4AAQADAAAAAAANAA4AAQADAAAAAAAOAA4AAQADAAAAAAAPAA4AAQADAAAAAAAQAA4AAQADAAAAAAARAA4AAQADAAAAAAASAA4AAQADAAAAAAATAA4AAQADAAAAAAAUAA4AAQADAAAAAAAVAA4AAQADAAAAAAAWAA4AAQADAAAAAAAXAA4AAQADAAAAAAAYAA4AAQADAAAAAAAZAA4AAQACAAAAAAAaAA4AAQACAAAAAAAbAA4AAQACAAAAAAAcAA4AAQACAAAAAAAdAA4AAQACAAAAAAAeAA4AAQACAAAAAAAfAA4AAQACAAAAAAAgAA4AAQACAAAAAAAhAA4AAQACAAAAAAAiAA4AAQADAAAAAAAjAA4AAQADAAAAAAAAAA8AAQADAAAAAAABAA8AAQADAAAAAAACAA8AAQADAAAAAAADAA8AAQADAAAAAAAEAA8AAQADAAAAAAAFAA8AAQADAAAAAAAGAA8AAQADAAAAAAAHAA8AAQADAAAAAAAIAA8AAQADAAAAAAAJAA8AAQADAAAAAAAKAA8AAQADAAAAAAALAA8AAQADAAAAAAAMAA8AAQADAAAAAAANAA8AAQABAAAAAAAOAA8AAQABAAAAAAAPAA8AAQABAAAAAAAQAA8AAQABAAAAAAARAA8AAQABAAAAAAASAA8AAQABAAAAAAATAA8AAQABAAAAAAAUAA8AAQABAAAAAAAVAA8AAQABAAAAAAAWAA8AAQABAAAAAAAXAA8AAQADAAAAAAAYAA8AAQADAAAAAAAZAA8AAQACAAAAAAAaAA8AAQACAAAAAAAbAA8AAQACAAAAAAAcAA8AAQACAAAAAAAdAA8AAQACAAAAAAAeAA8AAQACAAAAAAAfAA8AAQACAAAAAAAgAA8AAQACAAAAAAAhAA8AAQACAAAAAAAiAA8AAQADAAAAAAAjAA8AAQADAAAAAAAAABAAAQADAAAAAAABABAAAQADAAAAAAACABAAAQADAAAAAAADABAAAQADAAAAAAAEABAAAQADAAAAAAAFABAAAQADAAAAAAAGABAAAQADAAAAAAAHABAAAQADAAAAAAAIABAAAQADAAAAAAAJABAAAQADAAAAAAAKABAAAQADAAAAAAALABAAAQADAAAAAAAMABAAAQADAAAAAAANABAAAQABAAAAAAAOABAAAQABAAAAAAAPABAAAQABAAAAAAAQABAAAQABAAAAAAARABAAAQABAAAAAAASABAAAQABAAAAAAATABAAAQABAAAAAAAUABAAAQABAAAAAAAVABAAAQABAAAAAAAWABAAAQABAAAAAAAXABAAAQADAAAAAAAYABAAAQADAAAAAAAZABAAAQACAAAAAAAaABAAAQACAAAAAAAbABAAAQACAAAAAAAcABAAAQACAAAAAAAdABAAAQACAAAAAAAeABAAAQACAAAAAAAfABAAAQACAAAAAAAgABAAAQACAAAAAAAhABAAAQACAAAAAAAiABAAAQADAAAAAAAjABAAAQADAAAAAAAAABEAAQADAAAAAAABABEAAQADAAAAAAACABEAAQADAAAAAAADABEAAQADAAAAAAAEABEAAQADAAAAAAAFABEAAQADAAAAAAAGABEAAQADAAAAAAAHABEAAQADAAAAAAAIABEAAQADAAAAAAAJABEAAQADAAAAAAAKABEAAQADAAAAAAALABEAAQADAAAAAAAMABEAAQADAAAAAAANABEAAQABAAAAAAAOABEAAQABAAAAAAAPABEAAQABAAAAAAAQABEAAQABAAAAAAARABEAAQABAAAAAAASABEAAQABAAAAAAATABEAAQABAAAAAAAUABEAAQABAAAAAAAVABEAAQABAAAAAAAWABEAAQABAAAAAAAXABEAAQADAAAAAAAYABEAAQADAAAAAAAZABEAAQACAAAAAAAaABEAAQACAAAAAAAbABEAAQACAAAAAAAcABEAAQACAAAAAAAdABEAAQACAAAAAAAeABEAAQACAAAAAAAfABEAAQACAAAAAAAgABEAAQACAAAAAAAhABEAAQACAAAAAAAiABEAAQADAAAAAAAjABEAAQADAAAAAAAAABIAAQADAAAAAAABABIAAQADAAAAAAACABIAAQADAAAAAAADABIAAQADAAAAAAAEABIAAQADAAAAAAAFABIAAQADAAAAAAAGABIAAQADAAAAAAAHABIAAQADAAAAAAAIABIAAQADAAAAAAAJABIAAQADAAAAAAAKABIAAQADAAAAAAALABIAAQADAAAAAAAMABIAAQADAAAAAAANABIAAQABAAAAAAAOABIAAQABAAAAAAAPABIAAQABAAAAAAAQABIAAQABAAAAAAARABIAAQABAAAAAAASABIAAQABAAAAAAATABIAAQABAAAAAAAUABIAAQABAAAAAAAVABIAAQABAAAAAAAWABIAAQABAAAAAAAXABIAAQADAAAAAAAYABIAAQADAAAAAAAZABIAAQACAAAAAAAaABIAAQACAAAAAAAbABIAAQACAAAAAAAcABIAAQACAAAAAAAdABIAAQACAAAAAAAeABIAAQACAAAAAAAfABIAAQACAAAAAAAgABIAAQACAAAAAAAhABIAAQACAAAAAAAiABIAAQADAAAAAAAjABIAAQADAAAAAAAAABMAAQADAAAAAAABABMAAQADAAAAAAACABMAAQADAAAAAAADABMAAQADAAAAAAAEABMAAQADAAAAAAAFABMAAQADAAAAAAAGABMAAQADAAAAAAAHABMAAQADAAAAAAAIABMAAQADAAAAAAAJABMAAQADAAAAAAAKABMAAQADAAAAAAALABMAAQADAAAAAAAMABMAAQADAAAAAAANABMAAQABAAAAAAAOABMAAQABAAAAAAAPABMAAQABAAAAAAAQABMAAQABAAAAAAARABMAAQABAAAAAAASABMAAQABAAAAAAATABMAAQABAAAAAAAUABMAAQABAAAAAAAVABMAAQABAAAAAAAWABMAAQABAAAAAAAXABMAAQADAAAAAAAYABMAAQADAAAAAAAZABMAAQACAAAAAAAaABMAAQACAAAAAAAbABMAAQACAAAAAAAcABMAAQACAAAAAAAdABMAAQACAAAAAAAeABMAAQACAAAAAAAfABMAAQACAAAAAAAgABMAAQACAAAAAAAhABMAAQACAAAAAAAiABMAAQADAAAAAAAjABMAAQADAAAAAAAAABQAAQADAAAAAAABABQAAQADAAAAAAACABQAAQADAAAAAAADABQAAQADAAAAAAAEABQAAQADAAAAAAAFABQAAQADAAAAAAAGABQAAQADAAAAAAAHABQAAQADAAAAAAAIABQAAQADAAAAAAAJABQAAQADAAAAAAAKABQAAQADAAAAAAALABQAAQADAAAAAAAMABQAAQADAAAAAAANABQAAQABAAAAAAAOABQAAQABAAAAAAAPABQAAQABAAAAAAAQABQAAQABAAAAAAARABQAAQABAAAAAAASABQAAQABAAAAAAATABQAAQABAAAAAAAUABQAAQABAAAAAAAVABQAAQABAAAAAAAWABQAAQABAAAAAAAXABQAAQADAAAAAAAYABQAAQADAAAAAAAZABQAAQACAAAAAAAaABQAAQACAAAAAAAbABQAAQACAAAAAAAcABQAAQACAAAAAAAdABQAAQACAAAAAAAeABQAAQACAAAAAAAfABQAAQACAAAAAAAgABQAAQACAAAAAAAhABQAAQACAAAAAAAiABQAAQADAAAAAAAjABQAAQADAAAAAAAAABUAAQADAAAAAAABABUAAQADAAAAAAACABUAAQADAAAAAAADABUAAQADAAAAAAAEABUAAQADAAAAAAAFABUAAQADAAAAAAAGABUAAQADAAAAAAAHABUAAQADAAAAAAAIABUAAQADAAAAAAAJABUAAQADAAAAAAAKABUAAQADAAAAAAALABUAAQADAAAAAAAMABUAAQADAAAAAAANABUAAQABAAAAAAAOABUAAQABAAAAAAAPABUAAQABAAAAAAAQABUAAQABAAAAAAARABUAAQABAAAAAAASABUAAQABAAAAAAATABUAAQABAAAAAAAUABUAAQABAAAAAAAVABUAAQABAAAAAAAWABUAAQABAAAAAAAXABUAAQADAAAAAAAYABUAAQADAAAAAAAZABUAAQACAAAAAAAaABUAAQACAAAAAAAbABUAAQACAAAAAAAcABUAAQACAAAAAAAdABUAAQACAAAAAAAeABUAAQACAAAAAAAfABUAAQACAAAAAAAgABUAAQACAAAAAAAhABUAAQACAAAAAAAiABUAAQADAAAAAAAjABUAAQADAAAAAAAAABYAAQADAAAAAAABABYAAQADAAAAAAACABYAAQADAAAAAAADABYAAQADAAAAAAAEABYAAQADAAAAAAAFABYAAQADAAAAAAAGABYAAQADAAAAAAAHABYAAQADAAAAAAAIABYAAQADAAAAAAAJABYAAQADAAAAAAAKABYAAQADAAAAAAALABYAAQADAAAAAAAMABYAAQADAAAAAAANABYAAQABAAAAAAAOABYAAQABAAAAAAAPABYAAQABAAAAAAAQABYAAQABAAAAAAARABYAAQABAAAAAAASABYAAQABAAAAAAATABYAAQABAAAAAAAUABYAAQABAAAAAAAVABYAAQABAAAAAAAWABYAAQABAAAAAAAXABYAAQADAAAAAAAYABYAAQADAAAAAAAZABYAAQADAAAAAAAaABYAAQADAAAAAAAbABYAAQADAAAAAAAcABYAAQADAAAAAAAdABYAAQADAAAAAAAeABYAAQADAAAAAAAfABYAAQADAAAAAAAgABYAAQADAAAAAAAhABYAAQADAAAAAAAiABYAAQADAAAAAAAjABYAAQADAAAAAAAAABcAAQADAAAAAAABABcAAQADAAAAAAACABcAAQADAAAAAAADABcAAQADAAAAAAAEABcAAQADAAAAAAAFABcAAQADAAAAAAAGABcAAQADAAAAAAAHABcAAQADAAAAAAAIABcAAQADAAAAAAAJABcAAQADAAAAAAAKABcAAQADAAAAAAALABcAAQADAAAAAAAMABcAAQADAAAAAAANABcAAQADAAAAAAAOABcAAQADAAAAAAAPABcAAQADAAAAAAAQABcAAQADAAAAAAARABcAAQADAAAAAAASABcAAQADAAAAAAATABcAAQADAAAAAAAUABcAAQADAAAAAAAVABcAAQADAAAAAAAWABcAAQADAAAAAAAXABcAAQADAAAAAAAYABcAAQADAAAAAAAZABcAAQADAAAAAAAaABcAAQADAAAAAAAbABcAAQADAAAAAAAcABcAAQADAAAAAAAdABcAAQADAAAAAAAeABcAAQADAAAAAAAfABcAAQADAAAAAAAgABcAAQADAAAAAAAhABcAAQADAAAAAAAiABcAAQADAAAAAAAjABcAAQADAAAAAAA=")
+tile_set = ExtResource("2_tile")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAcAAAAAABcAAQABAAYAAAABAAAAAQAAAAcAAAABABcAAQAAAAYAAAACAAAAAQAAAAcAAAACABcAAQAAAAYAAAADAAAAAQAAAAcAAAADABcAAQAAAAYAAAAEAAAAAQAAAAcAAAAEABcAAQAAAAYAAAAFAAAAAQAAAAcAAAAFABcAAQAAAAYAAAAGAAAAAQAAAAcAAAAGABcAAQAAAAYAAAAHAAAAAQAAAAcAAAAHABcAAQAAAAYAAAAIAAAAAQAAAAcAAAAIABcAAQAAAAYAAAAJAAAAAQAAAAcAAAAJABcAAQAAAAYAAAAKAAAAAQAAAAcAAAAKABcAAQAAAAYAAAALAAAAAQAAAAcAAAALABcAAQAAAAYAAAAMAAAAAQAAAAcAAAAMABcAAQAAAAYAAAANAAAAAQAAAAcAAAANABcAAQAAAAYAAAAOAAAAAQAAAAcAAAAOABcAAQAAAAYAAAAPAAAAAQAAAAcAAAAPABcAAQAAAAYAAAAQAAAAAQAAAAcAAAAQABcAAQAAAAYAAAARAAAAAQAAAAcAAAARABcAAQAAAAYAAAASAAAAAQAAAAcAAAASABcAAQAAAAYAAAATAAAAAQAAAAcAAAATABcAAQAAAAYAAAAUAAAAAQAAAAcAAAAUABcAAQAAAAYAAAAVAAAAAQAAAAcAAAAVABcAAQAAAAYAAAAWAAAAAQAAAAcAAAAWABcAAQAAAAYAAAAXAAAAAQAAAAcAAAAXABcAAQAAAAYAAAAYAAAAAQAAAAcAAAAYABcAAQAAAAYAAAAZAAAAAQAAAAcAAAAZABcAAQAAAAYAAAAaAAAAAQAAAAcAAAAaABcAAQAAAAYAAAAbAAAAAQAAAAcAAAAbABcAAQAAAAYAAAAcAAAAAQAAAAcAAAAcABcAAQAAAAYAAAAdAAAAAQAAAAcAAAAdABcAAQAAAAYAAAAeAAAAAQAAAAcAAAAeABcAAQAAAAYAAAAfAAAAAQAAAAcAAAAfABcAAQAAAAYAAAAgAAAAAQAAAAcAAAAgABcAAQAAAAYAAAAhAAAAAQAAAAcAAAAhABcAAQAAAAYAAAAiAAAAAQAAAAcAAAAiABcAAQAAAAYAAAAjAAAAAQAEAAYAAAAjABcAAQAEAAUAAAAAAAEAAQADAAYAAAAjAAEAAQACAAYAAAAAAAIAAQADAAYAAAAjAAIAAQACAAYAAAAAAAMAAQADAAYAAAAjAAMAAQACAAYAAAAAAAQAAQADAAYAAAAjAAQAAQACAAYAAAAAAAUAAQADAAYAAAAjAAUAAQACAAYAAAAAAAYAAQADAAYAAAAjAAYAAQACAAYAAAAAAAcAAQADAAYAAAAjAAcAAQACAAYAAAAAAAgAAQADAAYAAAAjAAgAAQACAAYAAAAAAAkAAQADAAYAAAAjAAkAAQACAAYAAAAAAAoAAQADAAYAAAAjAAoAAQACAAYAAAAAAAsAAQADAAYAAAAjAAsAAQACAAYAAAAAAAwAAQADAAYAAAAjAAwAAQACAAYAAAAAAA0AAQADAAYAAAAjAA0AAQACAAYAAAAAAA4AAQADAAYAAAAjAA4AAQACAAYAAAAAAA8AAQADAAYAAAAjAA8AAQACAAYAAAAAABAAAQADAAYAAAAjABAAAQACAAYAAAAAABEAAQADAAYAAAAjABEAAQACAAYAAAAAABIAAQADAAYAAAAjABIAAQACAAYAAAAAABMAAQADAAYAAAAjABMAAQACAAYAAAAAABQAAQADAAYAAAAjABQAAQACAAYAAAAAABUAAQADAAYAAAAjABUAAQACAAYAAAAAABYAAQADAAYAAAAjABYAAQACAAYAAAAMAAIAAQACAAUAAAAMAAMAAQACAAUAAAAMAAQAAQACAAUAAAAMAAcAAQACAAUAAAAMAAgAAQACAAUAAAACAAkAAQABAAQAAAADAAkAAQABAAQAAAAEAAkAAQABAAQAAAAFAAkAAQABAAQAAAAIAAkAAQABAAQAAAAJAAkAAQABAAQAAAAKAAkAAQABAAQAAAALAAkAAQABAAQAAAAMAAkAAQABAAQAAAAYAAIAAQACAAUAAAAYAAMAAQACAAUAAAAYAAQAAQACAAUAAAAYAAcAAQACAAUAAAAYAAgAAQACAAUAAAAYAAkAAQABAAQAAAAZAAkAAQABAAQAAAAaAAkAAQABAAQAAAAbAAkAAQABAAQAAAAcAAkAAQABAAQAAAAfAAkAAQABAAQAAAAgAAkAAQABAAQAAAAhAAkAAQABAAQAAAAYAA4AAQACAAUAAAAYAA8AAQACAAUAAAAYABAAAQACAAUAAAAYABMAAQACAAUAAAAYABQAAQACAAUAAAAYABUAAQACAAUAAAAYAAwAAQABAAQAAAAZAAwAAQABAAQAAAAaAAwAAQABAAQAAAAbAAwAAQABAAQAAAAcAAwAAQABAAQAAAAfAAwAAQABAAQAAAAgAAwAAQABAAQAAAAhAAwAAQABAAQAAAAIAA4AAQACAAUAAAAIAA8AAQACAAUAAAAIABAAAQACAAUAAAAIABEAAQACAAUAAAAIABIAAQACAAUAAAA=")
+tile_set = ExtResource("2_tile")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Top" type="Node2D" parent="."]
+
+[node name="Desk_01" type="StaticBody2D" parent="Props"]
+position = Vector2(1868.8, 437.76)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_01"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_01"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_01"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Desk_02" type="StaticBody2D" parent="Props"]
+position = Vector2(1868.8, 637.44)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_02"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_02"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_02"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Chair_01" type="StaticBody2D" parent="Props"]
+position = Vector2(1856.33, 320)
+rotation = 2.95
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_01"]
+position = Vector2(-7.157, -15.645)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_01"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_01"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_02" type="StaticBody2D" parent="Props"]
+position = Vector2(1862.082, 755.2)
+rotation = 0.188
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_02"]
+position = Vector2(12.446, 11.878)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_02"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_02"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Tv_01" type="Sprite2D" parent="Top"]
+position = Vector2(1811.2, 437.76)
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_01"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Tv_02" type="Sprite2D" parent="Top"]
+position = Vector2(1920, 637.44)
+rotation = 3.142
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_02"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Desk_03" type="StaticBody2D" parent="Props"]
+position = Vector2(1868.8, 1000.96)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_03"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_03"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_03"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Desk_04" type="StaticBody2D" parent="Props"]
+position = Vector2(1868.8, 1200.64)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_04"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_04"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_04"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Chair_03" type="StaticBody2D" parent="Props"]
+position = Vector2(1874.732, 883.2)
+rotation = 3.346
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_03"]
+position = Vector2(-12.636, -11.676)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(678, 2345, 76, 77)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_03"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(678, 2345, 76, 77)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_03"]
+shape = SubResource("CircleShape2D_2")
+
+[node name="Chair_04" type="StaticBody2D" parent="Props"]
+position = Vector2(1876.38, 1318.4)
+rotation = 0.242
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_04"]
+position = Vector2(13.068, 11.191)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_04"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_04"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Tv_03" type="Sprite2D" parent="Top"]
+position = Vector2(1811.2, 1000.96)
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2349, 2216, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_03"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2349, 2216, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Tv_04" type="Sprite2D" parent="Top"]
+position = Vector2(1920, 1200.64)
+rotation = 3.142
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_04"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Desk_05" type="StaticBody2D" parent="Props"]
+position = Vector2(2304, 437.76)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_05"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2174, 699, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_05"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2174, 699, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_05"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Desk_06" type="StaticBody2D" parent="Props"]
+position = Vector2(2304, 637.44)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_06"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_06"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_06"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Chair_05" type="StaticBody2D" parent="Props"]
+position = Vector2(2284.908, 320)
+rotation = 3.118
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_05"]
+position = Vector2(-9.666, -14.233)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_05"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_05"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_06" type="StaticBody2D" parent="Props"]
+position = Vector2(2292.498, 755.2)
+rotation = 0.314
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_06"]
+position = Vector2(13.831, 10.233)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_06"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_06"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Tv_05" type="Sprite2D" parent="Top"]
+position = Vector2(2246.4, 437.76)
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_05"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Tv_06" type="Sprite2D" parent="Top"]
+position = Vector2(2355.2, 637.44)
+rotation = 3.142
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_06"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Desk_07" type="StaticBody2D" parent="Props"]
+position = Vector2(2304, 1000.96)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_07"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_07"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_07"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Desk_08" type="StaticBody2D" parent="Props"]
+position = Vector2(2304, 1200.64)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_08"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_08"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_08"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Chair_07" type="StaticBody2D" parent="Props"]
+position = Vector2(2305.069, 883.2)
+rotation = 3.3
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_07"]
+position = Vector2(-12.078, -12.253)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(678, 2345, 76, 77)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_07"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(678, 2345, 76, 77)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_07"]
+shape = SubResource("CircleShape2D_2")
+
+[node name="Chair_08" type="StaticBody2D" parent="Props"]
+position = Vector2(2315.121, 1318.4)
+rotation = 0.012
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_08"]
+position = Vector2(10.174, 13.874)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_08"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_08"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Tv_07" type="Sprite2D" parent="Top"]
+position = Vector2(2246.4, 1000.96)
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_07"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2219, 2218, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Tv_08" type="Sprite2D" parent="Top"]
+position = Vector2(2355.2, 1200.64)
+rotation = 3.142
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2479, 2218, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_08"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2479, 2218, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Desk_09" type="StaticBody2D" parent="Props"]
+position = Vector2(2739.2, 437.76)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_09"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_09"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_09"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Desk_10" type="StaticBody2D" parent="Props"]
+position = Vector2(2739.2, 637.44)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_10"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_10"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_10"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Chair_09" type="StaticBody2D" parent="Props"]
+position = Vector2(2715.292, 320)
+rotation = 3.173
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_09"]
+position = Vector2(-10.439, -13.676)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_09"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_09"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_10" type="StaticBody2D" parent="Props"]
+position = Vector2(2741.308, 755.2)
+rotation = 0.37
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_10"]
+position = Vector2(14.389, 9.432)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_10"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_10"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Tv_09" type="Sprite2D" parent="Top"]
+position = Vector2(2681.6, 437.76)
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2479, 2218, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_09"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2479, 2218, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Tv_10" type="Sprite2D" parent="Top"]
+position = Vector2(2790.4, 637.44)
+rotation = 3.142
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2349, 2216, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_10"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2349, 2216, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Desk_11" type="StaticBody2D" parent="Props"]
+position = Vector2(2739.2, 1000.96)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_11"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_11"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(118, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_11"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Desk_12" type="StaticBody2D" parent="Props"]
+position = Vector2(2739.2, 1200.64)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_12"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_12"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_12"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Chair_11" type="StaticBody2D" parent="Props"]
+position = Vector2(2746.757, 883.2)
+rotation = 2.885
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_11"]
+position = Vector2(-6.122, -16.079)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_11"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_11"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_12" type="StaticBody2D" parent="Props"]
+position = Vector2(2739.923, 1318.4)
+rotation = -0.009
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_12"]
+position = Vector2(9.867, 14.094)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_12"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_12"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Tv_11" type="Sprite2D" parent="Top"]
+position = Vector2(2681.6, 1000.96)
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2349, 2216, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_11"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2349, 2216, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Tv_12" type="Sprite2D" parent="Top"]
+position = Vector2(2790.4, 1200.64)
+rotation = 3.142
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2479, 2218, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_12"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2479, 2218, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Oval_01" type="StaticBody2D" parent="Props"]
+position = Vector2(896, 704)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Oval_01"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1125, 1192, 321, 188)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Oval_01"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1125, 1192, 321, 188)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Oval_01"]
+shape = SubResource("RectangleShape2D_3")
+
+[node name="Chair_13" type="StaticBody2D" parent="Props"]
+position = Vector2(1115.535, 738.33)
+rotation = 1.771
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_13"]
+position = Vector2(11.734, -12.582)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_13"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_13"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_14" type="StaticBody2D" parent="Props"]
+position = Vector2(1019.767, 848.027)
+rotation = 2.556
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_14"]
+position = Vector2(-0.599, -17.194)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_14"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_14"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_15" type="StaticBody2D" parent="Props"]
+position = Vector2(851.498, 873.356)
+rotation = 3.342
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_15"]
+position = Vector2(-12.582, -11.734)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_15"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_15"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_16" type="StaticBody2D" parent="Props"]
+position = Vector2(709.298, 799.477)
+rotation = 4.127
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_16"]
+position = Vector2(-17.194, 0.599)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_16"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_16"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_17" type="StaticBody2D" parent="Props"]
+position = Vector2(676.465, 669.67)
+rotation = 4.912
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_17"]
+position = Vector2(-11.734, 12.582)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(678, 2345, 76, 77)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_17"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(678, 2345, 76, 77)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_17"]
+shape = SubResource("CircleShape2D_2")
+
+[node name="Chair_18" type="StaticBody2D" parent="Props"]
+position = Vector2(772.233, 559.973)
+rotation = 5.698
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_18"]
+position = Vector2(0.599, 17.194)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_18"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_18"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_19" type="StaticBody2D" parent="Props"]
+position = Vector2(940.502, 534.644)
+rotation = 6.483
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_19"]
+position = Vector2(12.582, 11.734)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(549, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_19"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(549, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_19"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_20" type="StaticBody2D" parent="Props"]
+position = Vector2(1082.702, 608.523)
+rotation = 7.269
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_20"]
+position = Vector2(17.194, -0.599)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(678, 2345, 76, 77)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_20"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(678, 2345, 76, 77)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_20"]
+shape = SubResource("CircleShape2D_2")
+
+[node name="Plant_01" type="StaticBody2D" parent="Props"]
+position = Vector2(358.4, 358.4)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_01"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_01"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_01"]
+shape = SubResource("CircleShape2D_4")
+
+[node name="Plant_02" type="StaticBody2D" parent="Props"]
+position = Vector2(1408, 1024)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_02"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(830, 2116, 148, 143)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_02"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(830, 2116, 148, 143)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_02"]
+shape = SubResource("CircleShape2D_4")
+
+[node name="Cabinet_01" type="StaticBody2D" parent="Props"]
+position = Vector2(409.6, 1024)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Cabinet_01"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2356, 1854, 182, 151)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Cabinet_01"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2356, 1854, 182, 151)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Cabinet_01"]
+shape = SubResource("RectangleShape2D_5")
+
+[node name="Desk_13" type="StaticBody2D" parent="Props"]
+position = Vector2(3712, 563.2)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Desk_13"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Desk_13"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(632, 1213, 279, 141)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Desk_13"]
+shape = SubResource("RectangleShape2D_0")
+
+[node name="Chair_21" type="StaticBody2D" parent="Props"]
+position = Vector2(3712, 422.4)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_21"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_21"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_21"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Tv_13" type="Sprite2D" parent="Top"]
+position = Vector2(3660.8, 563.2)
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2349, 2216, 90, 72)
+region_filter_clip_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="Top/Tv_13"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2349, 2216, 90, 72)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Arm_01" type="StaticBody2D" parent="Props"]
+position = Vector2(3532.8, 819.2)
+rotation = -0.4
+
+[node name="Shadow" type="Sprite2D" parent="Props/Arm_01"]
+position = Vector2(3.759, 16.789)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1818, 2074, 112, 99)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Arm_01"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1818, 2074, 112, 99)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Arm_01"]
+shape = SubResource("CircleShape2D_6")
+
+[node name="Arm_02" type="StaticBody2D" parent="Props"]
+position = Vector2(3891.2, 819.2)
+rotation = 0.4
+
+[node name="Shadow" type="Sprite2D" parent="Props/Arm_02"]
+position = Vector2(14.662, 9.001)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1818, 2074, 112, 99)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Arm_02"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1818, 2074, 112, 99)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Arm_02"]
+shape = SubResource("CircleShape2D_6")
+
+[node name="Sofa_01" type="StaticBody2D" parent="Props"]
+position = Vector2(4147.2, 409.6)
+rotation = -1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Sofa_01"]
+position = Vector2(-14, 10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2081, 1622, 214, 100)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Sofa_01"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2081, 1622, 214, 100)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Sofa_01"]
+shape = SubResource("RectangleShape2D_7")
+
+[node name="Plant_03" type="StaticBody2D" parent="Props"]
+position = Vector2(3302.4, 371.2)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_03"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1085, 2105, 154, 165)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_03"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1085, 2105, 154, 165)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_03"]
+shape = SubResource("CircleShape2D_8")
+
+[node name="Plant_04" type="StaticBody2D" parent="Props"]
+position = Vector2(4224, 1024)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_04"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1343, 2105, 154, 166)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_04"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1343, 2105, 154, 166)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_04"]
+shape = SubResource("CircleShape2D_8")
+
+[node name="Cabinet_02" type="StaticBody2D" parent="Props"]
+position = Vector2(4172.8, 716.8)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Cabinet_02"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2356, 1854, 182, 151)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Cabinet_02"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2356, 1854, 182, 151)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Cabinet_02"]
+shape = SubResource("RectangleShape2D_5")
+
+[node name="Counter_01" type="StaticBody2D" parent="Props"]
+position = Vector2(2073.6, 2496)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Counter_01"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(589, 1749, 370, 102)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Counter_01"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(589, 1749, 370, 102)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Counter_01"]
+shape = SubResource("RectangleShape2D_9")
+
+[node name="Counter_02" type="StaticBody2D" parent="Props"]
+position = Vector2(2508.8, 2496)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Counter_02"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(589, 1749, 370, 102)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Counter_02"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(589, 1749, 370, 102)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Counter_02"]
+shape = SubResource("RectangleShape2D_9")
+
+[node name="Chair_22" type="StaticBody2D" parent="Props"]
+position = Vector2(2291.2, 2649.6)
+rotation = 0.2
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_22"]
+position = Vector2(12.582, 11.734)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_22"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_22"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Sofa_02" type="StaticBody2D" parent="Props"]
+position = Vector2(1894.4, 2073.6)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Sofa_02"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1822, 1622, 215, 100)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Sofa_02"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1822, 1622, 215, 100)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Sofa_02"]
+shape = SubResource("RectangleShape2D_10")
+
+[node name="Sofa_03" type="StaticBody2D" parent="Props"]
+position = Vector2(2662.4, 2073.6)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Sofa_03"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2340, 1622, 214, 100)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Sofa_03"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2340, 1622, 214, 100)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Sofa_03"]
+shape = SubResource("RectangleShape2D_7")
+
+[node name="Arm_03" type="StaticBody2D" parent="Props"]
+position = Vector2(2291.2, 2124.8)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Arm_03"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1688, 2074, 112, 99)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Arm_03"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1688, 2074, 112, 99)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Arm_03"]
+shape = SubResource("CircleShape2D_6")
+
+[node name="Arm_04" type="StaticBody2D" parent="Props"]
+position = Vector2(2432, 2124.8)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Arm_04"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2338, 2074, 112, 99)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Arm_04"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2338, 2074, 112, 99)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Arm_04"]
+shape = SubResource("CircleShape2D_6")
+
+[node name="Plant_05" type="StaticBody2D" parent="Props"]
+position = Vector2(1753.6, 2777.6)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_05"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_05"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_05"]
+shape = SubResource("CircleShape2D_4")
+
+[node name="Plant_06" type="StaticBody2D" parent="Props"]
+position = Vector2(2816, 2777.6)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_06"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(830, 2116, 148, 143)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_06"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(830, 2116, 148, 143)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_06"]
+shape = SubResource("CircleShape2D_4")
+
+[node name="Plant_07" type="StaticBody2D" parent="Props"]
+position = Vector2(1779.2, 2304)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_07"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1085, 2105, 154, 165)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_07"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1085, 2105, 154, 165)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_07"]
+shape = SubResource("CircleShape2D_8")
+
+[node name="Plant_08" type="StaticBody2D" parent="Props"]
+position = Vector2(2828.8, 2304)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_08"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1343, 2105, 154, 166)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_08"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1343, 2105, 154, 166)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_08"]
+shape = SubResource("CircleShape2D_8")
+
+[node name="Oval_02" type="StaticBody2D" parent="Props"]
+position = Vector2(3456, 1996.8)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Oval_02"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1639, 1190, 321, 188)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Oval_02"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1639, 1190, 321, 188)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Oval_02"]
+shape = SubResource("RectangleShape2D_3")
+
+[node name="Chair_23" type="StaticBody2D" parent="Props"]
+position = Vector2(3680, 1996.8)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_23"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_23"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_23"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_24" type="StaticBody2D" parent="Props"]
+position = Vector2(3456, 2137.6)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_24"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_24"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_24"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_25" type="StaticBody2D" parent="Props"]
+position = Vector2(3232, 1996.8)
+rotation = 4.712
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_25"]
+position = Vector2(-14, 10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_25"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_25"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_26" type="StaticBody2D" parent="Props"]
+position = Vector2(3456, 1856)
+rotation = 6.283
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_26"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_26"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_26"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Oval_03" type="StaticBody2D" parent="Props"]
+position = Vector2(3968, 1996.8)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Oval_03"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2153, 1190, 321, 188)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Oval_03"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2153, 1190, 321, 188)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Oval_03"]
+shape = SubResource("RectangleShape2D_3")
+
+[node name="Chair_27" type="StaticBody2D" parent="Props"]
+position = Vector2(4192, 1996.8)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_27"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_27"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_27"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_28" type="StaticBody2D" parent="Props"]
+position = Vector2(3968, 2137.6)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_28"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(549, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_28"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(549, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_28"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_29" type="StaticBody2D" parent="Props"]
+position = Vector2(3744, 1996.8)
+rotation = 4.712
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_29"]
+position = Vector2(-14, 10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_29"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_29"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_30" type="StaticBody2D" parent="Props"]
+position = Vector2(3968, 1856)
+rotation = 6.283
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_30"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_30"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_30"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Oval_04" type="StaticBody2D" parent="Props"]
+position = Vector2(3456, 2483.2)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Oval_04"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2153, 1190, 321, 188)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Oval_04"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2153, 1190, 321, 188)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Oval_04"]
+shape = SubResource("RectangleShape2D_3")
+
+[node name="Chair_31" type="StaticBody2D" parent="Props"]
+position = Vector2(3680, 2483.2)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_31"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_31"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(29, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_31"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_32" type="StaticBody2D" parent="Props"]
+position = Vector2(3456, 2624)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_32"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_32"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(289, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_32"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_33" type="StaticBody2D" parent="Props"]
+position = Vector2(3232, 2483.2)
+rotation = 4.712
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_33"]
+position = Vector2(-14, 10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_33"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_33"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_34" type="StaticBody2D" parent="Props"]
+position = Vector2(3456, 2342.4)
+rotation = 6.283
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_34"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_34"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(419, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_34"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Oval_05" type="StaticBody2D" parent="Props"]
+position = Vector2(3968, 2483.2)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Oval_05"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1639, 1190, 321, 188)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Oval_05"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1639, 1190, 321, 188)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Oval_05"]
+shape = SubResource("RectangleShape2D_3")
+
+[node name="Chair_35" type="StaticBody2D" parent="Props"]
+position = Vector2(4192, 2483.2)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_35"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_35"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_35"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_36" type="StaticBody2D" parent="Props"]
+position = Vector2(3968, 2624)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_36"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_36"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_36"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_37" type="StaticBody2D" parent="Props"]
+position = Vector2(3744, 2483.2)
+rotation = 4.712
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_37"]
+position = Vector2(-14, 10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_37"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(159, 2346, 74, 76)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_37"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Chair_38" type="StaticBody2D" parent="Props"]
+position = Vector2(3968, 2342.4)
+rotation = 6.283
+
+[node name="Shadow" type="Sprite2D" parent="Props/Chair_38"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(678, 2345, 76, 77)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Chair_38"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(678, 2345, 76, 77)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Chair_38"]
+shape = SubResource("CircleShape2D_2")
+
+[node name="Counter_03" type="StaticBody2D" parent="Props"]
+position = Vector2(3584, 2745.6)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Counter_03"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1101, 1747, 370, 102)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Counter_03"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1101, 1747, 370, 102)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Counter_03"]
+shape = SubResource("RectangleShape2D_9")
+
+[node name="Counter_04" type="StaticBody2D" parent="Props"]
+position = Vector2(4057.6, 2745.6)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Counter_04"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1101, 1747, 370, 102)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Counter_04"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1101, 1747, 370, 102)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Counter_04"]
+shape = SubResource("RectangleShape2D_9")
+
+[node name="Plant_09" type="StaticBody2D" parent="Props"]
+position = Vector2(4224, 1740.8)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_09"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_09"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_09"]
+shape = SubResource("CircleShape2D_4")
+
+[node name="Counter_05" type="StaticBody2D" parent="Props"]
+position = Vector2(409.6, 2022.4)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Counter_05"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(73, 1747, 370, 102)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Counter_05"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(73, 1747, 370, 102)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Counter_05"]
+shape = SubResource("RectangleShape2D_9")
+
+[node name="Counter_06" type="StaticBody2D" parent="Props"]
+position = Vector2(409.6, 2534.4)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Counter_06"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(73, 1747, 370, 102)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Counter_06"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(73, 1747, 370, 102)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Counter_06"]
+shape = SubResource("RectangleShape2D_9")
+
+[node name="Counter_07" type="StaticBody2D" parent="Props"]
+position = Vector2(691.2, 2022.4)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Counter_07"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(73, 1747, 370, 102)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Counter_07"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(73, 1747, 370, 102)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Counter_07"]
+shape = SubResource("RectangleShape2D_9")
+
+[node name="Counter_08" type="StaticBody2D" parent="Props"]
+position = Vector2(691.2, 2534.4)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Counter_08"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(73, 1747, 370, 102)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Counter_08"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(73, 1747, 370, 102)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Counter_08"]
+shape = SubResource("RectangleShape2D_9")
+
+[node name="Crate_01" type="StaticBody2D" parent="Props"]
+position = Vector2(1331.2, 2073.6)
+rotation = 0.279
+
+[node name="Shadow" type="Sprite2D" parent="Props/Crate_01"]
+position = Vector2(13.474, 10.699)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1440, 2329, 111, 110)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Crate_01"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1440, 2329, 111, 110)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Crate_01"]
+shape = SubResource("RectangleShape2D_11")
+
+[node name="Crate_02" type="StaticBody2D" parent="Props"]
+position = Vector2(1446.4, 2201.6)
+rotation = 0.17
+
+[node name="Shadow" type="Sprite2D" parent="Props/Crate_02"]
+position = Vector2(12.222, 12.109)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1440, 2329, 111, 110)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Crate_02"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1440, 2329, 111, 110)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Crate_02"]
+shape = SubResource("RectangleShape2D_11")
+
+[node name="Crate_03" type="StaticBody2D" parent="Props"]
+position = Vector2(1344, 2624)
+rotation = -0.073
+
+[node name="Shadow" type="Sprite2D" parent="Props/Crate_03"]
+position = Vector2(8.955, 14.69)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1310, 2328, 111, 110)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Crate_03"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1310, 2328, 111, 110)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Crate_03"]
+shape = SubResource("RectangleShape2D_11")
+
+[node name="Crate_04" type="StaticBody2D" parent="Props"]
+position = Vector2(832, 1638.4)
+rotation = 0.226
+
+[node name="Shadow" type="Sprite2D" parent="Props/Crate_04"]
+position = Vector2(12.888, 11.397)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1569, 2328, 110, 110)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Crate_04"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1569, 2328, 110, 110)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Crate_04"]
+shape = SubResource("RectangleShape2D_12")
+
+[node name="Crate_05" type="StaticBody2D" parent="Props"]
+position = Vector2(1254.4, 1638.4)
+rotation = -0.097
+
+[node name="Shadow" type="Sprite2D" parent="Props/Crate_05"]
+position = Vector2(8.598, 14.902)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1569, 2328, 110, 110)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Crate_05"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1569, 2328, 110, 110)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Crate_05"]
+shape = SubResource("RectangleShape2D_12")
+
+[node name="Crate_06" type="StaticBody2D" parent="Props"]
+position = Vector2(384, 1600)
+rotation = 0.019
+
+[node name="Shadow" type="Sprite2D" parent="Props/Crate_06"]
+position = Vector2(10.261, 13.81)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1440, 2329, 111, 110)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Crate_06"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1440, 2329, 111, 110)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Crate_06"]
+shape = SubResource("RectangleShape2D_11")
+
+[node name="Cabinet_03" type="StaticBody2D" parent="Props"]
+position = Vector2(204.8, 1574.4)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Cabinet_03"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2356, 1854, 182, 151)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Cabinet_03"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2356, 1854, 182, 151)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Cabinet_03"]
+shape = SubResource("RectangleShape2D_5")
+
+[node name="Cabinet_04" type="StaticBody2D" parent="Props"]
+position = Vector2(204.8, 2764.8)
+rotation = 1.571
+
+[node name="Shadow" type="Sprite2D" parent="Props/Cabinet_04"]
+position = Vector2(14, -10)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2356, 1854, 182, 151)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Cabinet_04"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2356, 1854, 182, 151)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Cabinet_04"]
+shape = SubResource("RectangleShape2D_5")
+
+[node name="Plant_10" type="StaticBody2D" parent="Props"]
+position = Vector2(1408, 2790.4)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_10"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_10"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_10"]
+shape = SubResource("CircleShape2D_4")
+
+[node name="Sofa_04" type="StaticBody2D" parent="Props"]
+position = Vector2(1792, 1561.6)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Sofa_04"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1564, 1622, 215, 100)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Sofa_04"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1564, 1622, 215, 100)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Sofa_04"]
+shape = SubResource("RectangleShape2D_10")
+
+[node name="Sofa_05" type="StaticBody2D" parent="Props"]
+position = Vector2(2867.2, 1561.6)
+rotation = 3.142
+
+[node name="Shadow" type="Sprite2D" parent="Props/Sofa_05"]
+position = Vector2(-10, -14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2081, 1880, 214, 100)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Sofa_05"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(2081, 1880, 214, 100)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Sofa_05"]
+shape = SubResource("RectangleShape2D_7")
+
+[node name="Plant_11" type="StaticBody2D" parent="Props"]
+position = Vector2(217.6, 217.6)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_11"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1085, 2105, 154, 165)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_11"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1085, 2105, 154, 165)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_11"]
+shape = SubResource("CircleShape2D_8")
+
+[node name="Plant_12" type="StaticBody2D" parent="Props"]
+position = Vector2(4377.6, 217.6)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_12"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_12"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_12"]
+shape = SubResource("CircleShape2D_4")
+
+[node name="Plant_13" type="StaticBody2D" parent="Props"]
+position = Vector2(217.6, 2854.4)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_13"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_13"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_13"]
+shape = SubResource("CircleShape2D_4")
+
+[node name="Plant_14" type="StaticBody2D" parent="Props"]
+position = Vector2(4377.6, 2854.4)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_14"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_14"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(572, 2116, 148, 143)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_14"]
+shape = SubResource("CircleShape2D_4")
+
+[node name="Plant_15" type="StaticBody2D" parent="Props"]
+position = Vector2(1638.4, 1356.8)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_15"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1343, 2105, 154, 166)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_15"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1343, 2105, 154, 166)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_15"]
+shape = SubResource("CircleShape2D_8")
+
+[node name="Plant_16" type="StaticBody2D" parent="Props"]
+position = Vector2(2969.6, 1356.8)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_16"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(830, 2116, 148, 143)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_16"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(830, 2116, 148, 143)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_16"]
+shape = SubResource("CircleShape2D_4")
+
+[node name="Plant_17" type="StaticBody2D" parent="Props"]
+position = Vector2(2995.2, 1792)
+
+[node name="Shadow" type="Sprite2D" parent="Props/Plant_17"]
+position = Vector2(10, 14)
+show_behind_parent = true
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1085, 2105, 154, 165)
+region_filter_clip_enabled = true
+self_modulate = Color(0, 0, 0, 0.3)
+
+[node name="Sprite" type="Sprite2D" parent="Props/Plant_17"]
+texture = ExtResource("3_text")
+region_enabled = true
+region_rect = Rect2(1085, 2105, 154, 165)
+region_filter_clip_enabled = true
+
+[node name="Shape" type="CollisionShape2D" parent="Props/Plant_17"]
+shape = SubResource("CircleShape2D_8")
+
+[node name="WallBodies" type="StaticBody2D" parent="."]
+
+[node name="Rect_00" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(2304, 22)
+shape = SubResource("RectangleShape2D_13")
+
+[node name="Rect_01" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(2304, 3050)
+shape = SubResource("RectangleShape2D_13")
+
+[node name="Rect_02" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(22, 1536)
+shape = SubResource("RectangleShape2D_14")
+
+[node name="Rect_03" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(4586, 1536)
+shape = SubResource("RectangleShape2D_14")
+
+[node name="Rect_04" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(1557, 448)
+shape = SubResource("RectangleShape2D_15")
+
+[node name="Rect_05" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(1557, 1024)
+shape = SubResource("RectangleShape2D_16")
+
+[node name="Rect_06" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(512, 1173)
+shape = SubResource("RectangleShape2D_17")
+
+[node name="Rect_07" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(1344, 1173)
+shape = SubResource("RectangleShape2D_18")
+
+[node name="Rect_08" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(3093, 448)
+shape = SubResource("RectangleShape2D_15")
+
+[node name="Rect_09" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(3093, 1024)
+shape = SubResource("RectangleShape2D_16")
+
+[node name="Rect_10" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(3392, 1173)
+shape = SubResource("RectangleShape2D_18")
+
+[node name="Rect_11" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(4160, 1173)
+shape = SubResource("RectangleShape2D_19")
+
+[node name="Rect_12" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(3093, 1984)
+shape = SubResource("RectangleShape2D_15")
+
+[node name="Rect_13" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(3093, 2624)
+shape = SubResource("RectangleShape2D_15")
+
+[node name="Rect_14" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(3392, 1557)
+shape = SubResource("RectangleShape2D_18")
+
+[node name="Rect_15" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(4160, 1557)
+shape = SubResource("RectangleShape2D_19")
+
+[node name="Rect_16" type="CollisionShape2D" parent="WallBodies"]
+position = Vector2(1045, 2112)
+shape = SubResource("RectangleShape2D_20")
