@@ -14,12 +14,13 @@
 radius = 83.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1573676459]
+collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_6t5aa")
 _weapons = Array[ExtResource("2_52ee3")]([ExtResource("3_bhhdu"), ExtResource("4_megsn"), ExtResource("5_yoq75"), ExtResource("6_8erm5")])
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1752817469]
-scale = Vector2(1, 1)
 
 [node name="Feet" type="AnimatedSprite2D" parent="Pivot" unique_id=191231669]
 texture_filter = 2

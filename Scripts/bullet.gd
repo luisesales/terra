@@ -8,6 +8,7 @@ var direction := Vector2.RIGHT
 var damage := 1
 var _hits_left := 1
 var _already_hit: Array[Node2D] = []
+var _spent := false ## o queue_free só vale no fim do quadro: vários corpos podem entrar no mesmo quadro e ainda chamar _on_body_entered
 
 
 func launch(from: Vector2, dir: Vector2, weapon: WeaponData) -> void:
@@ -24,12 +25,15 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	position += direction * speed * delta
+	if not _spent:
+		position += direction * speed * delta
 
 
 func _on_body_entered(body: Node2D) -> void:
+	if _spent:
+		return
 	if not body.has_method("take_damage"):
-		queue_free()
+		_spend()
 		return
 	if body in _already_hit:
 		return
@@ -37,4 +41,9 @@ func _on_body_entered(body: Node2D) -> void:
 	body.take_damage(damage)
 	_hits_left -= 1
 	if _hits_left <= 0:
-		queue_free()
+		_spend()
+
+
+func _spend() -> void:
+	_spent = true
+	queue_free()
