@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BossData" format=3]
+
+[ext_resource type="Script" path="res://Scripts/boss_data.gd" id="1_data"]
+[ext_resource type="SpriteFrames" path="res://Assets/Models/Enemies/Frames/boss2.tres" id="2_frames"]
+
+[resource]
+script = ExtResource("1_data")
+sprite_frames = ExtResource("2_frames")
+display_name = "Chefe 2"
+tier = 4
+max_hp = 520
+speed = 44.0
+contact_damage = 30
+attack_range = 180.0
+attack_cooldown = 1.8
+attack_animations = PackedStringArray("attack", "attack2")
+attack_hit_frames = PackedInt32Array(3, 6)
+collision_radius = 100.0
+spawn_circle_size = 450.0
+attack_ranges = PackedFloat32Array(180.0, 225.0)
+attack_damages = PackedInt32Array(30, 25)

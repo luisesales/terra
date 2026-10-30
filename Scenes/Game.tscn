@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bl253tpnwn6oc"]
+
+[ext_resource type="Script" uid="uid://c0pgyh6uj8n1" path="res://Scripts/game.gd" id="1_game"]
+[ext_resource type="Script" uid="uid://xqut0ifu54ae" path="res://Scripts/enemy_spawner.gd" id="3_spawner"]
+[ext_resource type="Resource" path="res://Assets/Classes/Spawn Table/default.tres" id="4_table"]
+[ext_resource type="PackedScene" path="res://Scenes/HUD.tscn" id="5_hud"]
+[ext_resource type="PackedScene" path="res://Scenes/DarkGrade.tscn" id="6_grade"]
+[ext_resource type="PackedScene" uid="uid://rylbramfuwwx" path="res://Scenes/Player.tscn" id="7_fgofq"]
+
+[node name="Game" type="Node2D" unique_id=1261824094]
+script = ExtResource("1_game")
+
+[node name="World" type="Node2D" parent="." unique_id=1547775514]
+
+[node name="Spawner" type="Node" parent="." unique_id=1227903569]
+script = ExtResource("3_spawner")
+table = ExtResource("4_table")
+
+[node name="HUD" parent="." unique_id=851531362 instance=ExtResource("5_hud")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=829494070]
+color = Color(0.45, 0.5, 0.6, 1)
+
+[node name="DarkGrade" parent="." unique_id=574646399 instance=ExtResource("6_grade")]
+
+[node name="Player" parent="." unique_id=1573676459 instance=ExtResource("7_fgofq")]
+position = Vector2(-45, 81)

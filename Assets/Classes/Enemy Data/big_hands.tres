@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://Scripts/enemy_data.gd" id="1_data"]
+[ext_resource type="SpriteFrames" path="res://Assets/Models/Enemies/Frames/big_hands.tres" id="2_frames"]
+
+[resource]
+script = ExtResource("1_data")
+sprite_frames = ExtResource("2_frames")
+display_name = "Mãos Grandes"
+tier = 3
+max_hp = 30
+speed = 52.0
+contact_damage = 15
+attack_range = 165.0
+attack_cooldown = 1.4
+attack_animations = PackedStringArray("attack")
+attack_hit_frames = PackedInt32Array(2)
+collision_radius = 85.0
+spawn_circle_size = 350.0

@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="SpawnTable" format=3 uid="uid://dem8hii7xhjvd"]
+
+[ext_resource type="Script" uid="uid://dlkjjowh2p7lj" path="res://Scripts/spawn_table.gd" id="1_table"]
+[ext_resource type="Script" uid="uid://ck5wlbwmm5xmw" path="res://Scripts/spawn_wave.gd" id="2_wave"]
+[ext_resource type="Resource" path="res://Assets/Classes/Enemy Data/army.tres" id="e_army"]
+[ext_resource type="Resource" path="res://Assets/Classes/Enemy Data/big_hands.tres" id="e_big_hands"]
+[ext_resource type="Resource" path="res://Assets/Classes/Enemy Data/big_head.tres" id="e_big_head"]
+[ext_resource type="Resource" path="res://Assets/Classes/Enemy Data/cop.tres" id="e_cop"]
+[ext_resource type="Resource" path="res://Assets/Classes/Enemy Data/zombie1.tres" id="e_zombie1"]
+[ext_resource type="Resource" path="res://Assets/Classes/Enemy Data/zombie2.tres" id="e_zombie2"]
+[ext_resource type="Resource" path="res://Assets/Classes/Enemy Data/zombie3.tres" id="e_zombie3"]
+[ext_resource type="Resource" path="res://Assets/Classes/Enemy Data/zombie4.tres" id="e_zombie4"]
+
+[sub_resource type="Resource" id="wave_0_zombie1"]
+script = ExtResource("2_wave")
+enemy = ExtResource("e_zombie1")
+interval = 1.6
+
+[sub_resource type="Resource" id="wave_0_zombie2"]
+script = ExtResource("2_wave")
+enemy = ExtResource("e_zombie2")
+interval = 1.6
+
+[sub_resource type="Resource" id="wave_0_zombie3"]
+script = ExtResource("2_wave")
+enemy = ExtResource("e_zombie3")
+interval = 1.6
+
+[sub_resource type="Resource" id="wave_0_zombie4"]
+script = ExtResource("2_wave")
+enemy = ExtResource("e_zombie4")
+interval = 1.6
+
+[sub_resource type="Resource" id="wave_60_zombie1"]
+script = ExtResource("2_wave")
+start = 60.0
+enemy = ExtResource("e_zombie1")
+interval = 1.0
+
+[sub_resource type="Resource" id="wave_60_zombie2"]
+script = ExtResource("2_wave")
+start = 60.0
+enemy = ExtResource("e_zombie2")
+interval = 1.0
+
+[sub_resource type="Resource" id="wave_60_zombie3"]
+script = ExtResource("2_wave")
+start = 60.0
+enemy = ExtResource("e_zombie3")
+interval = 1.0
+
+[sub_resource type="Resource" id="wave_60_zombie4"]
+script = ExtResource("2_wave")
+start = 60.0
+enemy = ExtResource("e_zombie4")
+interval = 1.0
+
+[sub_resource type="Resource" id="wave_120_army"]
+script = ExtResource("2_wave")
+start = 120.0
+enemy = ExtResource("e_army")
+weight = 0.6
+interval = 0.9
+
+[sub_resource type="Resource" id="wave_120_cop"]
+script = ExtResource("2_wave")
+start = 120.0
+enemy = ExtResource("e_cop")
+weight = 0.6
+interval = 0.9
+
+[sub_resource type="Resource" id="wave_240_big_hands"]
+script = ExtResource("2_wave")
+start = 240.0
+enemy = ExtResource("e_big_hands")
+weight = 0.4
+interval = 0.8
+
+[sub_resource type="Resource" id="wave_240_big_head"]
+script = ExtResource("2_wave")
+start = 240.0
+enemy = ExtResource("e_big_head")
+weight = 0.4
+interval = 0.8
+
+[resource]
+script = ExtResource("1_table")
+waves = Array[ExtResource("2_wave")]([SubResource("wave_0_zombie1"), SubResource("wave_0_zombie2"), SubResource("wave_0_zombie3"), SubResource("wave_0_zombie4"), SubResource("wave_60_zombie1"), SubResource("wave_60_zombie2"), SubResource("wave_60_zombie3"), SubResource("wave_60_zombie4"), SubResource("wave_120_army"), SubResource("wave_120_cop"), SubResource("wave_240_big_hands"), SubResource("wave_240_big_head")])
+boss_paths = PackedStringArray("res://Assets/Classes/Enemy Data/boss1.tres", "res://Assets/Classes/Enemy Data/boss2.tres", "res://Assets/Classes/Enemy Data/megaboss.tres")
