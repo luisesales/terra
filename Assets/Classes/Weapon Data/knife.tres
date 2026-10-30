@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_3i1bx")
 sprite_frames = ExtResource("2_3w3ps")
+display_name = "Faca"
 fire_interval = 0.5
 magazine_size = 99999999
 current_ammo = 99999999

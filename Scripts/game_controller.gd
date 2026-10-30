@@ -7,6 +7,8 @@ signal run_won
 signal player_died
 signal player_hp_changed(hp: int)
 signal ammo_changed(ammo: int, magazine_size: int)
+signal weapon_changed(display_name: String)
+signal reloading_changed(active: bool)
 
 enum State { MENU, PLAYING, DEAD, WON }
 
@@ -30,6 +32,8 @@ var current_map := -1
 var boss_window_open := false
 var ammo := 0
 var magazine_size := 0
+var weapon_name := "" ## arma equipada (o HUD mostra junto da munição)
+var reloading := false
 var player_hp := 0:
 	set(value):
 		player_hp = value
@@ -74,6 +78,16 @@ func report_ammo(current: int, magazine: int) -> void:
 	ammo_changed.emit(ammo, magazine_size)
 
 
+func report_weapon(display_name: String) -> void:
+	weapon_name = display_name
+	weapon_changed.emit(weapon_name)
+
+
+func report_reloading(active: bool) -> void:
+	reloading = active
+	reloading_changed.emit(active)
+
+
 ## Fixa o mapa da partida: o escolhido no menu ou, em "aleatório", um sorteado.
 func roll_map() -> int:
 	current_map = map_choice if map_choice >= 0 and map_choice < MAPS.size() else randi() % MAPS.size()
@@ -89,6 +103,8 @@ func enter_menu() -> void:
 	player_hp = 0
 	ammo = 0
 	magazine_size = 0
+	weapon_name = ""
+	reloading = false
 
 
 ## Zera tempo e estado. Vida e munição NÃO: o Player as informa no próprio _ready, que roda antes do _ready da cena de jogo.
@@ -108,6 +124,8 @@ func restart_run() -> void:
 	player_hp = 0
 	ammo = 0
 	magazine_size = 0
+	weapon_name = ""
+	reloading = false
 	start_run()
 	get_tree().reload_current_scene()
 	await get_tree().process_frame

@@ -55,6 +55,7 @@ func _equip(index: int) -> void:
 	_body.sprite_frames = _weapon.sprite_frames
 	_muzzle.position = _weapon.muzzle_offset
 	_body.play(&"idle")
+	GameController.report_weapon(_weapon.display_name)
 	_report_ammo()
 
 
@@ -126,6 +127,7 @@ func _start_reload() -> void:
 	_reload_serial += 1
 	var serial := _reload_serial
 	var weapon := _weapon # trocar de arma cancela a recarga, mas a espera não pode ler `_weapon` depois
+	GameController.report_reloading(true)
 	reload_started.emit(weapon.reload_time)
 	await get_tree().create_timer(weapon.reload_time).timeout
 	if serial != _reload_serial:
@@ -133,12 +135,14 @@ func _start_reload() -> void:
 	_ammo[weapon] = weapon.magazine_size
 	_report_ammo()
 	_is_reloading = false
+	GameController.report_reloading(false)
 	reload_finished.emit()
 
 
 func _cancel_reload() -> void:
 	_reload_serial += 1
 	_is_reloading = false
+	GameController.report_reloading(false)
 	reload_cancelled.emit()
 
 
