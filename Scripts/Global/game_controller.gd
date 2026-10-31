@@ -14,11 +14,13 @@ signal weapon_changed(display_name: String)
 signal reloading_changed(active: bool)
 signal boss_bar_changed(boss_name: String, hp: int, max_hp: int) ## barra de vida do chefe final, no topo do HUD
 signal boss_bar_closed
+signal reward_resolved(card: CardData) ## o jogador escolheu a carta de recompensa do fim de fase
 
 enum State { MENU, PLAYING, CLEARED, TRANSITION, DEAD, WON }
 
 const RUN_DURATION := 600.0 ## 10 min (cada fase)
 const BOSS_WINDOW := 180.0 ## o chefe entra nos últimos 3 min da fase (7:00 a 10:00)
+const CARD_POOL_PATH := "res://Assets/Classes/Cards/card_pool.tres" ## cartas de recompensa (1 oferta por fim de fase)
 
 ## Fases em ordem de dificuldade. "table" = SpawnTable da fase (quais inimigos e quando); a última fase é a do chefe final.
 const PHASES := [
@@ -37,6 +39,10 @@ var used_bosses := PackedStringArray()
 ## Chefe sorteado na tentativa atual da fase (vira "usado" só quando a fase é concluída; reiniciar a fase sorteia de novo).
 var phase_boss := ""
 var boss_window_open := false
+## Cartas de recompensa escolhidas na run, pela fase em que foram ganhas (índice em PHASES). Valem para as fases seguintes.
+var card_picks: Dictionary[int, CardData] = {}
+## O fim de fase abriu uma recompensa que ainda não foi escolhida: a travessia do portal espera por ela.
+var reward_pending := false
 var ammo := 0
 var magazine_size := 0
 var weapon_name := "" ## arma equipada (o HUD mostra junto da munição)
@@ -136,6 +142,7 @@ func enter_menu() -> void:
 	elapsed = 0.0
 	phase = start_phase
 	used_bosses.clear()
+	card_picks.clear()
 	phase_boss = ""
 	boss_window_open = false
 	player_hp = 0
@@ -150,6 +157,7 @@ func enter_menu() -> void:
 func begin_run() -> void:
 	phase = clampi(start_phase, 0, PHASES.size() - 1)
 	used_bosses.clear()
+	card_picks.clear()
 	start_run()
 
 
@@ -159,6 +167,7 @@ func start_run() -> void:
 	boss_window_open = false
 	phase_boss = ""
 	boss_bar_active = false
+	reward_pending = false
 	state = State.PLAYING
 	run_started.emit()
 
@@ -168,7 +177,49 @@ func restart_run() -> void:
 	if state == State.WON:
 		phase = clampi(start_phase, 0, PHASES.size() - 1)
 		used_bosses.clear()
+		card_picks.clear()
+	else:
+		# a carta ganha NESTA fase (no fim dela) não vale ao refazê-la: senão reiniciar a fase acumularia cartas
+		for earned in card_picks.keys():
+			if earned >= phase:
+				card_picks.erase(earned)
 	_reload_scene()
+
+
+## Cartas já escolhidas, na ordem das fases.
+func owned_cards() -> Array[CardData]:
+	var result: Array[CardData] = []
+	var phases := card_picks.keys()
+	phases.sort()
+	for earned in phases:
+		result.append(card_picks[earned])
+	return result
+
+
+## As cartas oferecidas no fim desta fase: uma por arma (CardPool.offer), sem repetir o que o jogador já pegou.
+func offer_cards() -> Array[CardData]:
+	var pool := load(CARD_POOL_PATH) as CardPool
+	if pool == null:
+		push_error("GameController: não consegui carregar o conjunto de cartas %s" % CARD_POOL_PATH)
+		return []
+	return pool.offer(owned_cards())
+
+
+## Registra a carta escolhida no fim da fase atual e libera a travessia do portal.
+func pick_card(card: CardData) -> void:
+	card_picks[phase] = card
+	reward_pending = false
+	reward_resolved.emit(card)
+
+
+## A arma `base` (o `.tres`) como o jogador a tem nesta run: uma CÓPIA com as cartas escolhidas aplicadas.
+## O `.tres` original não é tocado, então a melhoria nunca vaza para a próxima run.
+func upgraded(base: WeaponData) -> WeaponData:
+	var copy := base.duplicate() as WeaponData
+	for card in owned_cards():
+		if card.applies_to(base):
+			card.apply(copy)
+	return copy
 
 
 ## O jogador entrou no portal de saída: trava a travessia (uma vez só). Quem chama faz o efeito e depois chama next_phase().
@@ -192,6 +243,7 @@ func _reload_scene() -> void:
 	if _restarting:
 		return
 	_restarting = true
+	get_tree().paused = false # a tela de recompensa pausa o jogo; a cena nova não pode nascer parada
 	state = State.MENU # antes de zerar a vida, para o setter não contar como morte
 	player_hp = 0
 	ammo = 0

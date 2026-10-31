@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardPool" format=3]
+
+[ext_resource type="Script" path="res://Scripts/Player/card_pool.gd" id="1_pool"]
+[ext_resource type="Script" path="res://Scripts/Player/card_data.gd" id="2_card"]
+[ext_resource type="Resource" path="res://Assets/Classes/Cards/pistol_nervous.tres" id="3_c"]
+[ext_resource type="Resource" path="res://Assets/Classes/Cards/pistol_piercing.tres" id="4_c"]
+[ext_resource type="Resource" path="res://Assets/Classes/Cards/rifle_reload.tres" id="5_c"]
+[ext_resource type="Resource" path="res://Assets/Classes/Cards/rifle_heavy.tres" id="6_c"]
+[ext_resource type="Resource" path="res://Assets/Classes/Cards/shotgun_double.tres" id="7_c"]
+[ext_resource type="Resource" path="res://Assets/Classes/Cards/shotgun_bandolier.tres" id="8_c"]
+
+[resource]
+script = ExtResource("1_pool")
+cards = Array[ExtResource("2_card")]([ExtResource("3_c"), ExtResource("4_c"), ExtResource("5_c"), ExtResource("6_c"), ExtResource("7_c"), ExtResource("8_c")])

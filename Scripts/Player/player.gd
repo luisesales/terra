@@ -25,6 +25,9 @@ signal reload_cancelled
 ## Vive no jogador, que é recriado a cada fase: para manter entre fases, guarde o valor no GameController e reaplique.
 @export var has_flashlight := false: set = set_has_flashlight
 
+## As armas da run: cópias das `_weapons` já com as cartas de recompensa aplicadas (GameController.upgraded). É esta lista que o
+## jogador usa; as `_weapons` e os `.tres` ficam como estão, senão a melhoria vazaria para a próxima run.
+var _loadout: Array[WeaponData] = []
 var _weapon: WeaponData
 var _weapon_index := 0
 var _is_reloading := false
@@ -66,7 +69,7 @@ func _equip(index: int) -> void:
 	if _is_reloading:
 		_cancel_reload()
 	_weapon_index = _next_available(index)
-	_weapon = _weapons[_weapon_index]
+	_weapon = _loadout[_weapon_index]
 	_swinging = false # trocar no meio de um golpe o cancela
 	_body.sprite_frames = _weapon.sprite_frames
 	_muzzle.position = _weapon.muzzle_offset
@@ -84,10 +87,10 @@ func _is_available(weapon: WeaponData) -> bool:
 
 ## Primeiro índice disponível a partir de `index` (com volta ao começo da lista).
 func _next_available(index: int) -> int:
-	var count := _weapons.size()
+	var count := _loadout.size()
 	for step in count:
 		var candidate := wrapi(index + step, 0, count)
-		if _is_available(_weapons[candidate]):
+		if _is_available(_loadout[candidate]):
 			return candidate
 	return 0
 
@@ -266,9 +269,9 @@ func _handle_equipament() -> void:
 
 	if Input.is_action_just_pressed("swap_weapon"):
 		_equip(_weapon_index+1)
-	for i in _weapons.size():
+	for i in _loadout.size():
 		var action := "equip_weapon_%d" % (i + 1)
-		if InputMap.has_action(action) and Input.is_action_just_pressed(action) and _is_available(_weapons[i]):
+		if InputMap.has_action(action) and Input.is_action_just_pressed(action) and _is_available(_loadout[i]):
 			_equip(i)	
 	
 
@@ -311,8 +314,10 @@ func _ready() -> void:
 	add_child(CROSSHAIR_SCENE.instantiate())
 	GameController.player_hp = _hp
 	for weapon in _weapons:
+		_loadout.append(GameController.upgraded(weapon))
+	for weapon in _loadout:
 		_ammo[weapon] = weapon.magazine_size
-	if not _weapons.is_empty():
+	if not _loadout.is_empty():
 		_equip(0)
 
 func _physics_process(delta: float) -> void:

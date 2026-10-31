@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://Scripts/Player/card_data.gd" id="1_card"]
+[ext_resource type="Resource" uid="uid://bsns8k1pq38xq" path="res://Assets/Classes/Weapon Data/shotgun.tres" id="2_weapon"]
+
+[resource]
+script = ExtResource("1_card")
+title = "Carga Dobrada"
+description = "O dobro de chumbo em cada cartucho: o leque fica mais denso e devastador."
+weapon = ExtResource("2_weapon")
+pellets_mult = 2.0

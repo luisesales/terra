@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://Scripts/Player/card_data.gd" id="1_card"]
+[ext_resource type="Resource" uid="uid://c7d4q0drppmgt" path="res://Assets/Classes/Weapon Data/pistol.tres" id="2_weapon"]
+
+[resource]
+script = ExtResource("1_card")
+title = "Gatilho Nervoso"
+description = "Dedo leve e pente de sobra: a pistola dispara no dobro da velocidade e carrega o dobro de balas."
+weapon = ExtResource("2_weapon")
+fire_interval_mult = 0.5
+magazine_mult = 2.0

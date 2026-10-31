@@ -2,9 +2,12 @@ extends Node2D
 ## Raiz de composição da partida: instancia o mundo da fase atual (GameController.PHASES), o spawner e o HUD.
 ## Pode ser aberta direto (F6) ou vir do menu: nos dois casos garante que a run está em andamento.
 ## Também cuida dos portais: o jogador chega por um no começo de cada fase e, nas fases 1 e 2, sai por outro quando o tempo acaba.
+## No fim dessas duas fases ele escolhe uma carta de recompensa (uma melhoria forte para uma das armas de fogo) antes de sair.
 
 const PORTAL_SCENE := preload("res://Scenes/Portal.tscn")
 const CIRCLE_SCENE := preload("res://Scenes/SummoningCircle.tscn")
+const CARD_PICKER_SCENE := preload("res://Scenes/CardPicker.tscn")
+const REWARD_DELAY := 1.5 ## s entre o fim da fase e as cartas: dá tempo de ver os zumbis morrerem e o portal abrir
 const ARRIVE_TIME := 1.4 ## s do efeito de chegada (o jogador fica sem controle e sem dano)
 const DEPART_TIME := 0.8 ## s do efeito de saída antes de trocar de fase
 const ARRIVE_CIRCLE_SIZE := 420.0 ## diâmetro do círculo sob o jogador na chegada
@@ -19,9 +22,11 @@ const PORTAL_EDGE_MARGIN := 200.0 ## o portal não abre a menos disto da borda d
 @onready var _spawner: EnemySpawner = $Spawner
 @onready var _canvas_modulate: CanvasModulate = $CanvasModulate
 @onready var _dark_grade: CanvasLayer = $DarkGrade
+@onready var _hud: CanvasLayer = $HUD
 
 var _enemies: Node2D
 var _exit_portal: Portal
+var _card_picker: CardPicker
 
 
 func _ready() -> void:
@@ -46,6 +51,7 @@ func _ready() -> void:
 		_spawner.table = table
 	set_darkness(true)
 	GameController.phase_cleared.connect(_open_exit_portal)
+	GameController.phase_cleared.connect(_offer_reward)
 	_arrive(player)
 
 
@@ -107,6 +113,33 @@ func _open_exit_portal() -> void:
 	_exit_portal.open()
 
 
+## Fim de fase (1 e 2): sorteia as 3 cartas (uma por arma) e, depois de REWARD_DELAY, abre a tela de escolha com o jogo pausado.
+## Até a escolha, a travessia do portal fica esperando (reward_pending), mesmo que o jogador chegue ao portal antes das cartas.
+func _offer_reward() -> void:
+	var offer := GameController.offer_cards()
+	if offer.is_empty():
+		return
+	GameController.reward_pending = true
+	get_tree().create_timer(REWARD_DELAY).timeout.connect(_show_reward.bind(offer)) # a conexão some junto com este nó
+
+
+func _show_reward(offer: Array[CardData]) -> void:
+	if not GameController.reward_pending or _card_picker != null:
+		return
+	_card_picker = CARD_PICKER_SCENE.instantiate() as CardPicker
+	add_child(_card_picker)
+	_hud.hide() # a tela de cartas é cheia: o aviso "entre no portal" do HUD apareceria por trás do título
+	_card_picker.card_chosen.connect(_on_card_chosen)
+	_card_picker.open(offer)
+
+
+func _on_card_chosen(card: CardData) -> void:
+	GameController.pick_card(card)
+	_hud.show()
+	_card_picker.queue_free() # ao sair da árvore ele despausa o jogo
+	_card_picker = null
+
+
 ## Um ponto a PORTAL_DISTANCE do jogador, dentro da área jogável e longe de paredes. Prefere a direção do centro do mapa.
 func find_portal_position(origin: Vector2) -> Vector2:
 	var area := _world_bounds()
@@ -133,6 +166,8 @@ func find_portal_position(origin: Vector2) -> Vector2:
 func _on_portal_entered() -> void:
 	if not GameController.begin_transition():
 		return
+	if GameController.reward_pending: # chegou ao portal antes das cartas: a recompensa vem primeiro
+		await GameController.reward_resolved
 	var player := get_tree().get_first_node_in_group(&"player")
 	if player and player.has_method(&"depart"):
 		player.depart(Portal.COLOR, DEPART_TIME)
