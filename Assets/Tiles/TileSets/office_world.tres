@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" format=3]
+[gd_resource type="TileSet" format=3 uid="uid://4yckilsis1bk"]
 
 [ext_resource type="Texture2D" uid="uid://c6uaua3gig32p" path="res://Assets/Tiles/Zombies TDS/Buildings Funiture Tile Set/Tilelists/Tilelist1.png" id="tex_0"]
 [ext_resource type="Texture2D" uid="uid://cppgab1ba4h06" path="res://Assets/Tiles/Zombies TDS/Buildings Funiture Tile Set/Tilelists/Tilelist2.png" id="tex_1"]

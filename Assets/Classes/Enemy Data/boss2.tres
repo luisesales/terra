@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BossData" format=3]
 
-[ext_resource type="Script" path="res://Scripts/boss_data.gd" id="1_data"]
+[ext_resource type="Script" uid="uid://ch0vfu2enkjnq" path="res://Scripts/Enemy/boss_data.gd" id="1_data"]
 [ext_resource type="SpriteFrames" path="res://Assets/Models/Enemies/Frames/boss2.tres" id="2_frames"]
 
 [resource]

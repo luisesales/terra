@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bl253tpnwn6oc"]
 
-[ext_resource type="Script" uid="uid://c0pgyh6uj8n1" path="res://Scripts/game.gd" id="1_game"]
-[ext_resource type="Script" uid="uid://xqut0ifu54ae" path="res://Scripts/enemy_spawner.gd" id="3_spawner"]
-[ext_resource type="Resource" path="res://Assets/Classes/Spawn Table/default.tres" id="4_table"]
+[ext_resource type="Script" uid="uid://i2te7axcwcl4" path="res://Scripts/World/game.gd" id="1_game"]
+[ext_resource type="Script" uid="uid://u0md1cj0ieey" path="res://Scripts/Enemy/enemy_spawner.gd" id="3_spawner"]
+[ext_resource type="Resource" path="res://Assets/Classes/Spawn Table/phase1.tres" id="4_table"]
 [ext_resource type="PackedScene" path="res://Scenes/HUD.tscn" id="5_hud"]
 [ext_resource type="PackedScene" path="res://Scenes/DarkGrade.tscn" id="6_grade"]
 [ext_resource type="PackedScene" uid="uid://rylbramfuwwx" path="res://Scenes/Player.tscn" id="7_fgofq"]

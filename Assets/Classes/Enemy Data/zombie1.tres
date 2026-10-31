@@ -1,19 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3]
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dgwspy1hk2m6m"]
 
-[ext_resource type="Script" path="res://Scripts/enemy_data.gd" id="1_data"]
-[ext_resource type="SpriteFrames" path="res://Assets/Models/Enemies/Frames/zombie1.tres" id="2_frames"]
+[ext_resource type="Script" uid="uid://boej1gxf6fs23" path="res://Scripts/Enemy/enemy_data.gd" id="1_data"]
+[ext_resource type="SpriteFrames" uid="uid://blve5xxry73dd" path="res://Assets/Models/Enemies/Frames/zombie1.tres" id="2_frames"]
 
 [resource]
 script = ExtResource("1_data")
-sprite_frames = ExtResource("2_frames")
 display_name = "Zumbi 1"
-tier = 1
+sprite_frames = ExtResource("2_frames")
 max_hp = 9
 speed = 60.0
-contact_damage = 5
-attack_range = 110.0
-attack_cooldown = 1.0
 attack_animations = PackedStringArray("attack")
 attack_hit_frames = PackedInt32Array(2)
-collision_radius = 55.0
-spawn_circle_size = 210.0

@@ -1,6 +1,6 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://Scripts/summoning_circle.gd" id="1_circle"]
+[ext_resource type="Script" uid="uid://da8a6mtjgbhrp" path="res://Scripts/World/summoning_circle.gd" id="1_circle"]
 
 [node name="SummoningCircle" type="Node2D"]
 z_index = -2

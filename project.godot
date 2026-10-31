@@ -10,16 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Terra"
+config/name="Twin"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameController="*uid://dk4grfkef1lu"
+GameController="*uid://chdl601wucqhj"
 _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
-AudioSettings="*res://Scripts/audio_settings.gd"
+AudioTools="*uid://b0enargo2jp06"
 
 [display]
 

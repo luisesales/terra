@@ -1,6 +1,6 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://Scripts/world_map.gd" id="1_scri"]
+[ext_resource type="Script" uid="uid://7u67k7p5yfcp" path="res://Scripts/World/world_map.gd" id="1_scri"]
 [ext_resource type="TileSet" path="res://Assets/Tiles/TileSets/office_world.tres" id="2_tile"]
 [ext_resource type="Texture2D" uid="uid://ctwo3462vdabn" path="res://Assets/Tiles/Zombies TDS/Buildings Funiture Tile Set/Tilelists/Tilelist3.png" id="3_text"]
 

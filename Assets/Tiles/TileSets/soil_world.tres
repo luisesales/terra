@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" format=3]
+[gd_resource type="TileSet" format=3 uid="uid://m58sf1460aq3"]
 
 [ext_resource type="Texture2D" uid="uid://o1vlcg6x8vio" path="res://Assets/Tiles/Zombies TDS/Soil Stones Plants Tile Set/Tilelists/Tilelist1.png" id="tex_0"]
 

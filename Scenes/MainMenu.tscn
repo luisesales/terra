@@ -1,6 +1,11 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_menu"]
+[ext_resource type="Script" uid="uid://b8rjrgubio31u" path="res://Scripts/UI/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://dsgpn0ar0suv3" path="res://Assets/Models/Logo/twin.png" id="2_logo"]
+[ext_resource type="Shader" path="res://Assets/Shaders/logo_tint.gdshader" id="3_tint"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_logo"]
+shader = ExtResource("3_tint")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -33,11 +38,14 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="Title" type="Label" parent="Center/Box"]
+[node name="Logo" type="TextureRect" parent="Center/Box"]
+material = SubResource("ShaderMaterial_logo")
+custom_minimum_size = Vector2(576, 186)
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "Terra Reversa"
-horizontal_alignment = 1
+texture_filter = 2
+texture = ExtResource("2_logo")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="MapRow" type="HBoxContainer" parent="Center/Box"]
 layout_mode = 2
@@ -47,7 +55,7 @@ alignment = 1
 [node name="MapLabel" type="Label" parent="Center/Box/MapRow"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Mapa"
+text = "Fase inicial"
 
 [node name="MapOption" type="OptionButton" parent="Center/Box/MapRow"]
 custom_minimum_size = Vector2(280, 56)

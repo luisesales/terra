@@ -1,0 +1,44 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Enemy/mirror_boss.gd" id="1_mirror"]
+[ext_resource type="SpriteFrames" uid="uid://buprbe1wirggr" path="res://Assets/Models/Player/Frames/survivor_feet.tres" id="2_feet"]
+[ext_resource type="SpriteFrames" uid="uid://phn1u1rvetrw" path="res://Assets/Models/Player/Frames/survivor_rifle.tres" id="3_rifle"]
+[ext_resource type="Texture2D" uid="uid://b1jbkl6gco4ni" path="res://Assets/Models/Player/Sheets/survivor_muzzle_flash.png" id="4_flash"]
+
+[node name="MirrorBoss" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_mirror")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11.7, 0)
+
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="Feet" type="AnimatedSprite2D" parent="Pivot"]
+texture_filter = 2
+sprite_frames = ExtResource("2_feet")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Body" type="AnimatedSprite2D" parent="Pivot"]
+texture_filter = 2
+sprite_frames = ExtResource("3_rifle")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Muzzle" type="Marker2D" parent="Pivot/Body"]
+
+[node name="Sight" type="Line2D" parent="Pivot/Body/Muzzle"]
+visible = false
+points = PackedVector2Array(0, 0, 1400, 0)
+width = 3.0
+default_color = Color(1, 0.2, 0.15, 0.55)
+
+[node name="MuzzleFlash" type="Sprite2D" parent="Pivot/Body/Muzzle"]
+visible = false
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_flash")
+centered = false
+offset = Vector2(-10, -130)

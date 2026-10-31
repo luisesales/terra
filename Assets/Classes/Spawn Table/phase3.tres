@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="SpawnTable" format=3]
+
+[ext_resource type="Script" uid="uid://ck8hjfpwjs826" path="res://Scripts/World/spawn_table.gd" id="1_table"]
+[ext_resource type="Script" uid="uid://bf23t5lwvxxdu" path="res://Scripts/World/spawn_wave.gd" id="2_wave"]
+[ext_resource type="Resource" uid="uid://blgli6d88bd30" path="res://Assets/Classes/Enemy Data/big_hands.tres" id="e_big_hands"]
+[ext_resource type="Resource" uid="uid://bcw456f43k54t" path="res://Assets/Classes/Enemy Data/big_head.tres" id="e_big_head"]
+
+[sub_resource type="Resource" id="wave_0_big_hands"]
+script = ExtResource("2_wave")
+enemy = ExtResource("e_big_hands")
+interval = 1.5
+
+[sub_resource type="Resource" id="wave_0_big_head"]
+script = ExtResource("2_wave")
+enemy = ExtResource("e_big_head")
+interval = 1.5
+
+[sub_resource type="Resource" id="wave_120_big_hands"]
+script = ExtResource("2_wave")
+start = 120.0
+enemy = ExtResource("e_big_hands")
+interval = 1.1
+
+[sub_resource type="Resource" id="wave_120_big_head"]
+script = ExtResource("2_wave")
+start = 120.0
+enemy = ExtResource("e_big_head")
+interval = 1.1
+
+[sub_resource type="Resource" id="wave_300_big_hands"]
+script = ExtResource("2_wave")
+start = 300.0
+enemy = ExtResource("e_big_hands")
+interval = 0.85
+
+[sub_resource type="Resource" id="wave_300_big_head"]
+script = ExtResource("2_wave")
+start = 300.0
+enemy = ExtResource("e_big_head")
+interval = 0.85
+
+[resource]
+script = ExtResource("1_table")
+waves = Array[ExtResource("2_wave")]([SubResource("wave_0_big_hands"), SubResource("wave_0_big_head"), SubResource("wave_120_big_hands"), SubResource("wave_120_big_head"), SubResource("wave_300_big_hands"), SubResource("wave_300_big_head")])
+max_alive = 90
+late_intensity_start = 360.0
+late_intensity = 1.4
+boss_paths = PackedStringArray("res://Assets/Classes/Enemy Data/mirror_boss.tres")

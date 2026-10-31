@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cl5oppib1glcv"]
+
+[ext_resource type="Script" uid="uid://b0enargo2jp06" path="res://Scripts/Global/audio_tools.gd" id="1_d8yvs"]
+
+[node name="Soundtrack" type="Node" unique_id=1373473204]
+script = ExtResource("1_d8yvs")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=120794939]
+volume_db = -10.0
+bus = &"Music"

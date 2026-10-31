@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MirrorBossData" format=3]
+
+[ext_resource type="Script" path="res://Scripts/Enemy/mirror_boss_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://Assets/Classes/Weapon Data/mirror_rifle.tres" id="2_rifle"]
+[ext_resource type="Resource" path="res://Assets/Classes/Weapon Data/mirror_shotgun.tres" id="3_shotgun"]
+
+[resource]
+script = ExtResource("1_data")
+rifle = ExtResource("2_rifle")
+shotgun = ExtResource("3_shotgun")
+display_name = "O Espelho"
+tier = 5
+max_hp = 1500
+speed = 184.0
+collision_radius = 83.0
+spawn_circle_size = 800.0

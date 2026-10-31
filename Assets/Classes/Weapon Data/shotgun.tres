@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bsns8k1pq38xq"]
 
-[ext_resource type="Script" uid="uid://drhpvhgmgfyma" path="res://Scripts/weapon_data.gd" id="1_414gq"]
+[ext_resource type="Script" uid="uid://bwldgjyptdbap" path="res://Scripts/Player/weapon_data.gd" id="1_414gq"]
 [ext_resource type="SpriteFrames" uid="uid://dqkuvrbc2eu5m" path="res://Assets/Models/Player/Frames/survivor_shotgun.tres" id="2_vq6xt"]
 
 [resource]
@@ -16,4 +16,4 @@ pellets = 12
 pierce = 1
 muzzle_offset = Vector2(180, 28)
 spread_degrees = 10.0
-metadata/_custom_type_script = "uid://drhpvhgmgfyma"
+metadata/_custom_type_script = "uid://bwldgjyptdbap"

@@ -1,8 +1,8 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bnjnhmjjmb2cd"]
 
-[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_options"]
+[ext_resource type="Script" uid="uid://c230a2u3dgn36" path="res://Scripts/UI/options_menu.gd" id="1_options"]
 
-[node name="OptionsMenu" type="Control"]
+[node name="OptionsMenu" type="Control" unique_id=405260827]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_options")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1187640151]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Center" type="CenterContainer" parent="."]
+[node name="Center" type="CenterContainer" parent="." unique_id=2099850389]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,27 +29,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Box" type="VBoxContainer" parent="Center"]
+[node name="Box" type="VBoxContainer" parent="Center" unique_id=286801486]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="Title" type="Label" parent="Center/Box"]
+[node name="Title" type="Label" parent="Center/Box" unique_id=42576961]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
 text = "Options"
 horizontal_alignment = 1
 
-[node name="MasterRow" type="HBoxContainer" parent="Center/Box"]
+[node name="MasterRow" type="HBoxContainer" parent="Center/Box" unique_id=60147635]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="Label" type="Label" parent="Center/Box/MasterRow"]
+[node name="Label" type="Label" parent="Center/Box/MasterRow" unique_id=1953022358]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Geral"
 
-[node name="Slider" type="HSlider" parent="Center/Box/MasterRow"]
+[node name="Slider" type="HSlider" parent="Center/Box/MasterRow" unique_id=350436224]
 custom_minimum_size = Vector2(480, 40)
 layout_mode = 2
 size_flags_vertical = 4
@@ -57,17 +57,17 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="MusicRow" type="HBoxContainer" parent="Center/Box"]
+[node name="MusicRow" type="HBoxContainer" parent="Center/Box" unique_id=193756511]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="Label" type="Label" parent="Center/Box/MusicRow"]
+[node name="Label" type="Label" parent="Center/Box/MusicRow" unique_id=44707182]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Música"
 
-[node name="Slider" type="HSlider" parent="Center/Box/MusicRow"]
+[node name="Slider" type="HSlider" parent="Center/Box/MusicRow" unique_id=992877722]
 custom_minimum_size = Vector2(480, 40)
 layout_mode = 2
 size_flags_vertical = 4
@@ -75,17 +75,17 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="SfxRow" type="HBoxContainer" parent="Center/Box"]
+[node name="SfxRow" type="HBoxContainer" parent="Center/Box" unique_id=472531875]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="Label" type="Label" parent="Center/Box/SfxRow"]
+[node name="Label" type="Label" parent="Center/Box/SfxRow" unique_id=957848374]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Efeitos"
 
-[node name="Slider" type="HSlider" parent="Center/Box/SfxRow"]
+[node name="Slider" type="HSlider" parent="Center/Box/SfxRow" unique_id=333311937]
 custom_minimum_size = Vector2(480, 40)
 layout_mode = 2
 size_flags_vertical = 4
@@ -93,7 +93,7 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="BackButton" type="Button" parent="Center/Box"]
+[node name="BackButton" type="Button" parent="Center/Box" unique_id=825558700]
 custom_minimum_size = Vector2(360, 72)
 layout_mode = 2
 size_flags_horizontal = 4

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rylbramfuwwx"]
 
-[ext_resource type="Script" uid="uid://0a28o84wq3ci" path="res://Scripts/player.gd" id="1_6t5aa"]
-[ext_resource type="Script" uid="uid://drhpvhgmgfyma" path="res://Scripts/weapon_data.gd" id="2_52ee3"]
+[ext_resource type="Script" uid="uid://b4eo5j4r4fbx5" path="res://Scripts/Player/player.gd" id="1_6t5aa"]
+[ext_resource type="Script" uid="uid://bwldgjyptdbap" path="res://Scripts/Player/weapon_data.gd" id="2_52ee3"]
 [ext_resource type="SpriteFrames" uid="uid://buprbe1wirggr" path="res://Assets/Models/Player/Frames/survivor_feet.tres" id="2_vgqql"]
 [ext_resource type="Resource" uid="uid://c7d4q0drppmgt" path="res://Assets/Classes/Weapon Data/pistol.tres" id="3_bhhdu"]
 [ext_resource type="SpriteFrames" uid="uid://qycypuo60k17" path="res://Assets/Models/Player/Frames/survivor_handgun.tres" id="3_fkybt"]

@@ -1,9 +1,9 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cgogn3ha5ddc"]
 
-[ext_resource type="Script" path="res://Scripts/crosshair.gd" id="1_crosshair"]
+[ext_resource type="Script" uid="uid://77ima8g5p7ax" path="res://Scripts/Player/crosshair.gd" id="1_yta86"]
 
-[node name="Crosshair" type="CanvasLayer"]
+[node name="Crosshair" type="CanvasLayer" unique_id=350615458]
 layer = 11
-script = ExtResource("1_crosshair")
+script = ExtResource("1_yta86")
 
-[node name="Reticle" type="Node2D" parent="."]
+[node name="Reticle" type="Node2D" parent="." unique_id=296322208]
