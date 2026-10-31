@@ -9,7 +9,10 @@ signal reload_cancelled
 @onready var _body := $Pivot/Body
 @onready var _muzzle := $Pivot/Body/Muzzle
 @onready var _muzzle_flash := $Pivot/Body/Muzzle/MuzzleFlash
-@onready var _hitbox: CollisionShape2D = $Hitbox
+@onready var _hitbox: CollisionShape2D = $Hitbox ## o colisor do CORPO (os inimigos encostam nele); a hitbox do golpe é a `_melee_area`
+@onready var _melee_area: Area2D = $Pivot/Body/MeleeHitbox
+@onready var _melee_shape: CollisionShape2D = $Pivot/Body/MeleeHitbox/CollisionShape2D
+@onready var _beam: PointLight2D = $Pivot/Body/Muzzle/FlashlightBeam
 
 
 @export var _speed := 160.0
@@ -17,6 +20,10 @@ signal reload_cancelled
 @export var _feet_turn_speed := 12.0
 
 @export var _weapons : Array[WeaponData] = []
+## Variável de controle da lanterna (equipamento 5): desligada, ela não pode ser equipada (tecla 5 e Tab a ignoram).
+## Ligue pelo Inspector ou por código (`player.has_flashlight = true`). Desligar com ela na mão troca para a primeira arma.
+## Vive no jogador, que é recriado a cada fase: para manter entre fases, guarde o valor no GameController e reaplique.
+@export var has_flashlight := false: set = set_has_flashlight
 
 var _weapon: WeaponData
 var _weapon_index := 0
@@ -25,6 +32,8 @@ var _reload_serial := 0 ## cada recarga tem um número: a espera de uma recarga 
 var _ammo: Dictionary[WeaponData, int] = {}
 
 var _fire_cooldown := 0.0
+var _swinging := false ## golpe corpo a corpo em andamento: a hitbox só fere na janela de frames da arma (melee_hit_frames)
+var _melee_hit: Array[Node2D] = [] ## quem já levou o golpe atual: cada alvo apanha uma vez por golpe
 var _locked := false ## chegando ou saindo por um portal: sem controle e sem dano
 var _departing := false ## já entrou no portal de saída (a trava não termina mais)
 
@@ -33,6 +42,9 @@ const CROSSHAIR_SCENE := preload("res://Scenes/Crosshair.tscn")
 
 ## Perto demais do corpo não há ângulo que faça o cano passar pelo mouse: limita a correção do cano a 30° (seno 0,5).
 const MAX_BARREL_SINE := 0.5
+
+const WORLD_LAYER := 1 ## paredes: a única camada que o raio de linha de visão do golpe enxerga
+const MELEE_ARC_SEGMENTS := 8 ## divisões do arco do setor da hitbox corpo a corpo
 
 
 func _spawn_bullet(spread := 0.0) -> void:
@@ -49,16 +61,84 @@ func _show_muzzle_flash() -> void:
 	_muzzle_flash.visible = false
 
 
+## Equipa a arma `index`. Se ela não está disponível (a lanterna sem `has_flashlight`), vai para a próxima disponível.
 func _equip(index: int) -> void:
 	if _is_reloading:
 		_cancel_reload()
-	_weapon_index = wrapi(index, 0, _weapons.size())
+	_weapon_index = _next_available(index)
 	_weapon = _weapons[_weapon_index]
+	_swinging = false # trocar no meio de um golpe o cancela
 	_body.sprite_frames = _weapon.sprite_frames
 	_muzzle.position = _weapon.muzzle_offset
+	_beam.visible = _weapon.is_flashlight
+	_build_melee_shape()
 	_body.play(&"idle")
 	GameController.report_weapon(_weapon.display_name)
 	_report_ammo()
+
+
+## A lanterna só existe para o jogador com `has_flashlight`; as demais armas estão sempre disponíveis.
+func _is_available(weapon: WeaponData) -> bool:
+	return has_flashlight or not weapon.is_flashlight
+
+
+## Primeiro índice disponível a partir de `index` (com volta ao começo da lista).
+func _next_available(index: int) -> int:
+	var count := _weapons.size()
+	for step in count:
+		var candidate := wrapi(index + step, 0, count)
+		if _is_available(_weapons[candidate]):
+			return candidate
+	return 0
+
+
+func set_has_flashlight(value: bool) -> void:
+	has_flashlight = value
+	if not value and _weapon != null and _weapon.is_flashlight:
+		_equip(0) # perdeu a lanterna que estava na mão
+
+
+## Monta a hitbox do golpe da arma equipada: um setor de círculo com o vértice na cabeça (nó Body) e aberto para a mira.
+## Armas de fogo não têm hitbox (o colisor fica desligado).
+func _build_melee_shape() -> void:
+	_melee_shape.disabled = not _weapon.is_melee
+	if not _weapon.is_melee:
+		return
+	var half := deg_to_rad(_weapon.melee_arc_degrees) * 0.5
+	var center := deg_to_rad(_weapon.melee_arc_offset_degrees)
+	var points := PackedVector2Array([Vector2.ZERO])
+	for i in MELEE_ARC_SEGMENTS + 1:
+		var angle := center - half + 2.0 * half * i / MELEE_ARC_SEGMENTS
+		points.append(Vector2.from_angle(angle) * _weapon.melee_range)
+	var sector := ConvexPolygonShape2D.new() # um por equipar: o alcance e a abertura mudam de arma para arma
+	sector.set_point_cloud(points)
+	_melee_shape.shape = sector
+
+
+## Chamado todo quadro de física. Durante os frames `melee_hit_frames` da animação `meleeattack`, fere uma vez cada alvo
+## que a hitbox toca. Roda aqui (e não no sinal `body_entered`) para não ferir o alvo dentro do callback de física e porque
+## um alvo que já estava dentro quando a janela abriu, ou que entra nela depois, também apanha. Também faz a consulta do raio.
+func _update_melee() -> void:
+	if not _swinging:
+		return
+	var frame: int = _body.frame
+	if _hp <= 0 or _locked or _body.animation != &"meleeattack" or frame > _weapon.melee_hit_frames.y:
+		_swinging = false
+		return
+	if frame < _weapon.melee_hit_frames.x:
+		return
+	for target in _melee_area.get_overlapping_bodies():
+		if target in _melee_hit or not target.has_method(&"take_damage") or not _has_line_of_sight(target):
+			continue
+		_melee_hit.append(target)
+		target.take_damage(_weapon.damage)
+
+
+## Uma parede entre o jogador e o alvo bloqueia o golpe (a bala também some na parede). Raio do centro do corpo ao
+## centro do alvo, só na camada World; se o alvo estiver atrás da quina neste quadro, tenta de novo no próximo.
+func _has_line_of_sight(target: Node2D) -> bool:
+	var query := PhysicsRayQueryParameters2D.create(get_body_center(), target.global_position, WORLD_LAYER)
+	return get_world_2d().direct_space_state.intersect_ray(query).is_empty()
 
 
 func _report_ammo() -> void:
@@ -140,8 +220,11 @@ func _fire_weapon():
 			_spawn_bullet(deg_to_rad(angle + randf_range(-1.5, 1.5)))
 
 	else:
-		_body.play(&"meleeattack")	
-	_fire_cooldown = _weapon.fire_interval		
+		_body.play(&"meleeattack")
+		_body.set_frame_and_progress(0, 0.0) # play() não reinicia uma animação que já está tocando (golpes em sequência)
+		_melee_hit.clear()
+		_swinging = true
+	_fire_cooldown = _weapon.fire_interval
 
 func _handle_aim() -> void:
 	_aim_at(get_global_mouse_position())
@@ -184,7 +267,8 @@ func _handle_equipament() -> void:
 	if Input.is_action_just_pressed("swap_weapon"):
 		_equip(_weapon_index+1)
 	for i in _weapons.size():
-		if Input.is_action_just_pressed("equip_weapon_%d" % (i + 1)):
+		var action := "equip_weapon_%d" % (i + 1)
+		if InputMap.has_action(action) and Input.is_action_just_pressed(action) and _is_available(_weapons[i]):
 			_equip(i)	
 	
 
@@ -238,4 +322,5 @@ func _physics_process(delta: float) -> void:
 		_feet.play(&"idle")
 	elif _hp > 0:
 		_handle_input(delta)
+	_update_melee()
 	

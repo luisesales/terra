@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3]
+
+[ext_resource type="Script" uid="uid://bwldgjyptdbap" path="res://Scripts/Player/weapon_data.gd" id="1_weapon"]
+[ext_resource type="SpriteFrames" path="res://Assets/Models/Player/Frames/survivor_flashlight.tres" id="2_frames"]
+
+[resource]
+script = ExtResource("1_weapon")
+display_name = "Lanterna"
+sprite_frames = ExtResource("2_frames")
+damage = 1
+fire_interval = 0.5
+magazine_size = 99999999
+current_ammo = 99999999
+reload_time = 0.0
+pellets = 0
+is_melee = true
+muzzle_offset = Vector2(192, -5)
+is_flashlight = true
+melee_range = 170.0
+melee_arc_degrees = 70.0
+melee_arc_offset_degrees = -15.0
+melee_hit_frames = Vector2i(6, 10)
+metadata/_custom_type_script = "uid://bwldgjyptdbap"

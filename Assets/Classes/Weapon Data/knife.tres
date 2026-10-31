@@ -7,10 +7,15 @@
 script = ExtResource("1_3i1bx")
 display_name = "Faca"
 sprite_frames = ExtResource("2_3w3ps")
+damage = 4
 fire_interval = 0.5
 magazine_size = 99999999
 current_ammo = 99999999
 reload_time = 0.0
 pellets = 0
 is_melee = true
+melee_range = 200.0
+melee_arc_degrees = 100.0
+melee_arc_offset_degrees = 20.0
+melee_hit_frames = Vector2i(7, 12)
 metadata/_custom_type_script = "uid://bwldgjyptdbap"
